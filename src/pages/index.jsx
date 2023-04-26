@@ -20,6 +20,8 @@ export default function Page(props) {
 
   const [loading, setLoading] = useState(true)
   const [mode, setMode] = useState('')
+  const [content, setContent] = useState('')
+
   const [freeControl, setFreeControl] = useState(false)
 
   useEffect(() => {
@@ -29,50 +31,37 @@ export default function Page(props) {
     }
   }, [progress])
 
-  function Mode() {
-    switch (mode) {
-      case 'storyBoard':
-        return <StoryBoard setMode={setMode} />
-      case 'tutorial':
-        return <Tutorial setFreeControl={setFreeControl} setMode={setMode} />
-      default:
-        return <></>
-    }
-  }
-
   return (
     <>
-      {/* {loading ? <Loading></Loading> : ''} */}
-      {/* <Loading></Loading> */}
+      {loading ? <Loading></Loading> : ''}
+
       <div className='relative h-full w-full bg-black'>
-        {/* <Scene
+        <Scene
           shadows
           colorManagement
           shadowMap
+          mode={mode}
           freeControl={freeControl}
           className='pointer-events-none h-screen'
           eventSource={props.ref}
           eventPrefix='client'
-        /> */}
+        />
         {/*  */}
         {/*  */}
 
-        {/* <div className='absolute z-10  h-screen w-screen'>
-          <Mode />
-        </div> */}
+        {mode === 'storyBoard' && <StoryBoard setMode={setMode} />}
+        {mode === 'tutorial' && <Tutorial setFreeControl={setFreeControl} setMode={setMode} />}
 
-        <div className='absolute z-10 h-auto  w-full'>
-          <Layout></Layout>
-        </div>
+        <Layout setContent={setContent} content={content}></Layout>
 
         {/*  */}
         {/*  */}
 
-        {/* <Logo></Logo>
+        <Logo></Logo>
         <TopRight></TopRight>
-        <BottomRight></BottomRight>
-        <Main></Main>
-        <BottomLeft></BottomLeft> */}
+        <BottomRight setContent={setContent}></BottomRight>
+        <Main setContent={setContent}></Main>
+        <BottomLeft setMode={setMode}></BottomLeft>
 
         {/*  */}
         {/*  */}

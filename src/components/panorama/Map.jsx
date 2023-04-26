@@ -1,226 +1,58 @@
-import * as React from 'react'
-import ImageMapper from 'react-img-mapper'
+import React, { useState } from 'react'
+import clsx from 'clsx'
+import { MapInteractionCSS } from 'react-map-interaction'
+import ImageHotspots from 'react-image-hotspots'
 
 function Map(props) {
-  const { setCurrentScene } = props
+  const { setCurrentScene, setOpenPanorama, mapInformation, mapImage, mapName } = props
 
-  const [imgCoords, setImgCoords] = React.useState(0)
+  //   console.log(openPanorama)
 
-  const map = {
-    name: 'my-map',
-    areas: [
-      {
-        name: '7',
-        shape: 'circle',
-        coords: [150, 112, 5],
-        preFillColor: 'red',
-      },
-      {
-        name: '8',
-        shape: 'circle',
-        coords: [147, 138, 5],
-        preFillColor: 'red',
-      },
-      {
-        name: '9',
-        shape: 'circle',
-        coords: [143, 153, 5],
-        preFillColor: 'red',
-      },
-      {
-        name: '10',
-        shape: 'circle',
-        coords: [148, 196, 5],
-        preFillColor: 'red',
-      },
-      {
-        name: '5',
-        shape: 'circle',
-        coords: [163, 145, 5],
-        preFillColor: 'red',
-      },
-      {
-        name: '6',
-        shape: 'circle',
-        coords: [188, 103, 5],
-        preFillColor: 'red',
-      },
-      {
-        name: '12',
-        shape: 'circle',
-        coords: [185, 184, 5],
-        preFillColor: 'red',
-      },
-      {
-        name: '13',
-        shape: 'circle',
-        coords: [189, 223, 5],
-        preFillColor: 'red',
-      },
-      {
-        name: '0',
-        shape: 'circle',
-        coords: [221, 66, 5],
-        preFillColor: 'red',
-      },
-      {
-        name: '1',
-        shape: 'circle',
-        coords: [214, 91, 5],
-        preFillColor: 'red',
-      },
-      {
-        name: '2',
-        shape: 'circle',
-        coords: [222, 114, 5],
-        preFillColor: 'red',
-      },
-      {
-        name: '3',
-        shape: 'circle',
-        coords: [215, 129, 5],
-        preFillColor: 'red',
-      },
-      {
-        name: '4',
-        shape: 'circle',
-        coords: [212, 146, 5],
-        preFillColor: 'red',
-      },
-      {
-        name: '11',
-        shape: 'circle',
-        coords: [212, 171, 5],
-        preFillColor: 'red',
-      },
-      {
-        name: '15',
-        shape: 'circle',
-        coords: [231, 172, 5],
-        preFillColor: 'red',
-      },
-      {
-        name: '14',
-        shape: 'circle',
-        coords: [222, 208, 5],
-        preFillColor: 'red',
-      },
-      {
-        name: '31',
-        shape: 'circle',
-        coords: [270, 80, 5],
-        preFillColor: 'red',
-      },
-      {
-        name: '30',
-        shape: 'circle',
-        coords: [270, 118, 5],
-        preFillColor: 'red',
-      },
-      {
-        name: '16',
-        shape: 'circle',
-        coords: [269, 146, 5],
-        preFillColor: 'red',
-      },
-      {
-        name: '18',
-        shape: 'circle',
-        coords: [257, 172, 5],
-        preFillColor: 'red',
-      },
-      {
-        name: '17',
-        shape: 'circle',
-        coords: [274, 170, 5],
-        preFillColor: 'red',
-      },
-      {
-        name: '19',
-        shape: 'circle',
-        coords: [261, 205, 5],
-        preFillColor: 'red',
-      },
-      {
-        name: '20',
-        shape: 'circle',
-        coords: [304, 189, 5],
-        preFillColor: 'red',
-      },
-      {
-        name: '21',
-        shape: 'circle',
-        coords: [297, 224, 5],
-        preFillColor: 'red',
-      },
-      {
-        name: '29',
-        shape: 'circle',
-        coords: [300, 104, 5],
-        preFillColor: 'red',
-      },
-      {
-        name: '22',
-        shape: 'circle',
-        coords: [305, 147, 5],
-        preFillColor: 'red',
-      },
-      {
-        name: '28',
-        shape: 'circle',
-        coords: [340, 77, 5],
-        preFillColor: 'red',
-      },
-      {
-        name: '27',
-        shape: 'circle',
-        coords: [335, 112, 5],
-        preFillColor: 'red',
-      },
-      {
-        name: '26',
-        shape: 'circle',
-        coords: [340, 151, 5],
-        preFillColor: 'red',
-      },
-      {
-        name: '23',
-        shape: 'circle',
-        coords: [325, 161, 5],
-        preFillColor: 'red',
-      },
-      {
-        name: '25',
-        shape: 'circle',
-        coords: [340, 165, 5],
-        preFillColor: 'red',
-      },
-      {
-        name: '24',
-        shape: 'circle',
-        coords: [335, 201, 5],
-        preFillColor: 'red',
-      },
-    ],
+  const map = []
+
+  for (let i = 0; i < mapInformation.length; i++) {
+    map.push({
+      x: mapInformation[i].mapCoordinate[0],
+      y: mapInformation[i].mapCoordinate[1],
+      content: (
+        <div
+          title={mapInformation[i].name}
+          onClick={(area) => {
+            setCurrentScene(mapInformation[i].name)
+            setOpenPanorama(true)
+          }}
+          className=' !h-2 !w-2 cursor-pointer rounded-full border-none bg-blue-700 p-1 text-blue-500 hover:bg-blue-500 md:!h-4 md:!w-4'></div>
+      ),
+    })
   }
+  const [value, setValue] = useState({ scale: 1.2, translation: { x: 0, y: 0 } })
 
   return (
-    <>
-      <div className='my-8 grid w-full grid-cols-1 space-y-4'>
-        <div className='flex w-full flex-col items-center justify-center'>
-          <div>{imgCoords}</div>
-          <ImageMapper
-            src={'https://fridayphotos.s3.eu-central-1.amazonaws.com/dot_map.png'}
-            width={600}
-            onImageClick={(evt) => setImgCoords('' + evt.pageX + ', ' + evt.pageY)}
-            onClick={(area) => setCurrentScene(parseInt(area.name))}
-            map={map}
-            // parentWidth={800}
-            // responsive={true}
-          />
+    <div className={clsx('flex h-full w-full  bg-slate-200')}>
+      <div className={clsx(' relative flex  w-full flex-col items-center justify-center')}>
+        <div className={clsx('flex h-[600px] w-full items-center justify-center overflow-hidden')}>
+          <div className=' absolute right-4 top-4 z-10 overflow-hidden rounded-md bg-black px-2 py-1 text-base text-white'>
+            {mapName}
+          </div>
+          <MapInteractionCSS
+            value={value}
+            onChange={(value) => {
+              setValue(value)
+            }}>
+            <div className=' h-full w-full'>
+              <ImageHotspots
+                alt='Sample image'
+                hideFullscreenControl={false}
+                hideZoomControls={false}
+                hotspots={map}
+                src={mapImage}
+                className='hidden'
+              />
+            </div>
+          </MapInteractionCSS>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

@@ -5,7 +5,9 @@ import Controls from './Control'
 import * as THREE from 'three'
 import { Perf } from 'r3f-perf'
 import Background from '../Background'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import clsx from 'clsx'
+import { mode } from 'tailwind.config'
 
 export default function Scene({ children, ...props }) {
   const config = {
@@ -13,10 +15,27 @@ export default function Scene({ children, ...props }) {
     camSBAwalFov: 30,
   }
 
+  const [zoom, setZoom] = useState(false)
+  const [location, setLocation] = useState('')
+
+  const toggleZoom = (e) => {
+    if (zoom === true) {
+      setZoom(false)
+      setLocation('')
+    } else if (zoom === false) {
+      setZoom(true)
+      setLocation(e)
+    }
+  }
+
+  useEffect(() => {
+    // console.log(location)
+  }, [location])
+
   return (
-    <div className='absolute h-full w-full'>
+    <div className={clsx('absolute h-full w-full')}>
       <Canvas
-        dpr={1.5}
+        // dpr={1.5}
         frameloop='demand'
         camera={{ fov: config.camSBAwalFov, near: 0.1, far: 500, position: config.camStartPosition }}
         {...props}>
@@ -28,8 +47,8 @@ export default function Scene({ children, ...props }) {
         {/* <Perf /> */}
         {/*  */}
         {/* */}
-        <Controls storyBoard={props.storyBoard} freeControl={props.freeControl} />
-        <Model></Model>
+        <Controls mode={props.mode} freeControl={props.freeControl} />
+        <Model toggleZoom={toggleZoom}></Model>
         <Background />
         {/*  */}
         {/*  */}

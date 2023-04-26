@@ -11,14 +11,14 @@ export default function Controls(props) {
   const step = 0.025
 
   useFrame((state) => {
-    if (props.storyBoard == true) {
+    if (props.mode === 'storyBoard') {
       state.camera.fov = THREE.MathUtils.lerp(state.camera.fov, 50, step)
       state.camera.position.lerp(vec.set(camera.position.x, camera.position.y, camera.position.z), step)
       state.camera.lookAt(0, 0, 0)
       state.camera.updateProjectionMatrix()
     }
 
-    if (controls.current && props.storyBoard == false && props.freeControl == true) {
+    if (controls.current && props.mode === '' && props.freeControl == true) {
       let _v = new THREE.Vector3()
       let minPan = new THREE.Vector3(0, 0, 0)
       let maxPan = new THREE.Vector3(0, 0, 0)

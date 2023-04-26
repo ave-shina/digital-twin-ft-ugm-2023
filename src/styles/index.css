@@ -55,3 +55,7 @@
   width: 2rem !important;
   border-radius: 0 !important;
 }
+
+.img-mapper-area-highlighted {
+  cursor: pointer;
+}

@@ -1,11 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import clsx from 'clsx'
 import Card from './search/Card'
+import { Landmarks } from '../data/Landamarks'
 
 export default function Search() {
+  const [focus, setFocus] = useState(false)
+  const [searchValue, setSearchValue] = useState('')
+
+  const locations = []
+
+  for (let i = 0; i < Landmarks.data.length; i++) {
+    locations.push({
+      name: Landmarks.data[i].attributes.name,
+      description: Landmarks.data[i].attributes.description,
+      image: Landmarks.data[i].attributes.thumbnail.data?.attributes.formats.thumbnail.url,
+    })
+  }
+
+  // console.log(locations)
+
+  const filteredLocation = locations.filter((location) => {
+    return location.name.toLowerCase().indexOf(searchValue?.toLowerCase()) !== -1
+  })
+
   return (
-    <div className='flex flex-col items-center justify-center'>
-      <h1 className={clsx(' pb-8  font-medium leading-none text-black', 'text-6xl sm:text-8xl')}>Find Location.</h1>
+    <div className={clsx('flex min-h-[calc(100vh-96px)] w-full flex-col  bg-white px-8 md:px-[10%]')}>
+      <h1 className={clsx(' pb-8  font-medium leading-none text-black', 'text-6xl sm:text-8xl')}>Cari Lokasi.</h1>
       <div className={clsx('flex flex-col items-center justify-center ')}>
         <p className={clsx(' text-base leading-8 text-black')}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -32,27 +52,24 @@ export default function Search() {
               </svg>
             </div>
             <input
-              // onFocus={() => {
-              //   dispatch(toggleSearchFocus(true))
-              // }}
-              // onChange={(e) => dispatch(onChangeSearch(e.target.value))}
-              // value={searchValue}
+              onFocus={() => {
+                setFocus(true)
+              }}
+              onChange={(e) => setSearchValue(e.target.value)}
+              value={searchValue}
               type='search'
               className={clsx(
                 'block h-full w-full  rounded-lg border border-black bg-gray-50 p-3 pl-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 ',
               )}
-              // placeholder={placeholder}
+              placeholder={'Cari Lokasi'}
               required
             />
           </div>
         </form>
         <div className={clsx('grid w-full grid-cols-1 gap-2', 'sm:grid-cols-2 sm:gap-6', 'md:grid-cols-3 md:gap-8')}>
-          <Card></Card>
-          <Card></Card>
-          <Card></Card>
-          <Card></Card>
-          <Card></Card>
-          <Card></Card>
+          {filteredLocation.map((item, index) => {
+            return <Card key={index} name={item.name} description={item.description} image={item.image}></Card>
+          })}
         </div>
       </div>
     </div>

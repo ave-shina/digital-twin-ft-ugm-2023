@@ -39,7 +39,7 @@ export default function TopRight(props) {
           dispatch(toggleMusic())
         }}
         className={clsx(
-          ' group mr-4 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-solid border-white bg-transparent text-white hover:bg-white sm:h-14 sm:w-14 ',
+          ' group  flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-solid border-white bg-transparent text-white hover:bg-white sm:h-14 sm:w-14 ',
         )}>
         {navigation.music ? (
           <svg width='27' height='20' viewBox='0 0 27 20' fill='none' xmlns='http://www.w3.org/2000/svg'>

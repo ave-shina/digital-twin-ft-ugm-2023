@@ -40,8 +40,8 @@ export default function Layout(props) {
   return (
     <>
       {navigation.content != '' && navigation.content !== 'location' && (
-        <div className={clsx('absolute h-auto  w-full', navigation.showTooltip ? 'z-[99999999]' : '')}>
-          <div className={clsx('  min-h-screen w-full ', navigation.theme === 'dark' ? 'bg-black' : 'bg-white')}>
+        <div className={clsx('absolute h-full  w-full', navigation.showTooltip ? 'z-[99999999]' : '')}>
+          <div className={clsx('  min-h-full w-full ', navigation.theme === 'dark' ? 'bg-black' : 'bg-white')}>
             <Navbar></Navbar>
             <div className={clsx('flex w-full flex-col items-start justify-center  py-32')}>
               {navigation.content === 'search' && <Search></Search>}

@@ -6,8 +6,8 @@ import Fade from 'react-reveal/Fade'
 export default function StoryBoard(props) {
   const { setIntroduction, startVmap } = props
   return (
-    <div className='absolute z-50  h-screen w-screen'>
-      <div className='relative h-screen w-screen'>
+    <div className='absolute z-50  h-full w-screen'>
+      <div className='relative h-full w-screen'>
         <div className='animate-myfirst animate-bg-blur absolute z-10 flex h-full w-full flex-col items-center justify-center bg-black  bg-opacity-40'></div>
         <div className='absolute top-0 z-20 flex h-full w-full flex-col items-center justify-center'>
           <Zoom delay={1250} duration={2000}>

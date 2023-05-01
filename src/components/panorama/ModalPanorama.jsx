@@ -40,7 +40,7 @@ export default function ModalPanorama(props) {
       tabindex='-1'
       aria-hidden='true'
       className={clsx(
-        'fixed top-0 z-[99999999]  !h-screen !w-screen  items-center justify-center',
+        'fixed top-0 z-[99999999]  !h-full !w-screen  items-center justify-center',
         openPanorama ? 'flex' : ' hidden',
       )}>
       <div
@@ -48,7 +48,7 @@ export default function ModalPanorama(props) {
           setOpenPanorama(false)
         }}
         className={clsx(
-          'absolute top-0  flex !h-screen !w-screen  items-center justify-center bg-black  bg-opacity-80',
+          'absolute top-0  flex !h-full !w-screen  items-center justify-center bg-black  bg-opacity-80',
         )}></div>
       <div className={clsx(' absolute z-50 h-[95%] w-full max-w-7xl')}>
         {/* <!-- Modal content --> */}

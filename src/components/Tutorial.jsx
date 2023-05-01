@@ -20,8 +20,8 @@ export default function Tutorial(props) {
   const navigation = useSelector((state) => state.navigation)
 
   return (
-    <div className={clsx('absolute z-[99999999]  h-screen w-screen')}>
-      <div className={clsx('relative h-screen w-screen')}>
+    <div className={clsx('absolute z-[99999999]  h-full w-screen')}>
+      <div className={clsx('relative h-full w-screen')}>
         <div
           className={clsx(
             'animate-myfirst animate-bg-blur absolute z-10 flex h-full w-full flex-col items-center justify-center bg-black  bg-opacity-40',

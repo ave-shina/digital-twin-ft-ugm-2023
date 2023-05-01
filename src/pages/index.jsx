@@ -68,7 +68,7 @@ export default function Page(props) {
         />
       </audio>
 
-      <div className='relative min-h-screen w-full bg-black'>
+      <div className='absolute h-full w-full bg-black'>
         <Scene
           shadows
           colorManagement
@@ -76,7 +76,7 @@ export default function Page(props) {
           introduction={introduction}
           setContent={setContent}
           freeControl={freeControl}
-          className='pointer-events-none h-screen'
+          className='pointer-events-none'
           eventSource={props.ref}
           eventPrefix='client'
         />

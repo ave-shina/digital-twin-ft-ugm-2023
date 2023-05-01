@@ -54,8 +54,8 @@ export default function Layout(props) {
       )}
 
       {navigation.content != '' && navigation.content === 'location' && (
-        <div className={clsx('absolute z-10 h-auto w-full ')}>
-          <div className={clsx('flex w-full flex-col items-start justify-center  ')}>
+        <div className={clsx('absolute z-10 h-full w-full ')}>
+          <div className={clsx('relative flex min-h-full w-full flex-col items-start justify-center  ')}>
             {navigation.content === 'location' && <Location></Location>}
           </div>
         </div>

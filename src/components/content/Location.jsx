@@ -120,7 +120,7 @@ export default function Location(props) {
           currentScene={currentScene}
           setCurrentScene={setCurrentScene}></ModalPanorama>
       )}
-      <div className={clsx('relative flex h-screen w-full ')}>
+      <div className={clsx('absolute flex min-h-full w-full ')}>
         <div className={clsx('absolute bottom-4 left-8 mb-8 flex ', 'flex-col sm:flex-row')}>
           <h1 className={clsx('  font-medium leading-none text-white', 'text-6xl sm:text-9xl')}>
             {data.attributes.name}
@@ -144,7 +144,7 @@ export default function Location(props) {
       </div>
       <div
         className={clsx(
-          'flex min-h-screen w-full  flex-col    py-8',
+          'absolute top-[100%] flex min-h-full w-full  flex-col    py-8',
           'px-8 sm:px-[10%]',
           navigation.theme === 'dark' ? ' bg-black' : '  bg-white',
         )}>

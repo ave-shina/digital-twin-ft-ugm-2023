@@ -12,8 +12,11 @@ import Image from 'next/image'
 export default function Content() {
   const router = useRouter()
   const dispatch = useDispatch()
+
   useEffect(() => {
-    dispatch(toggleContent(router.query.content))
+    if (router.query.content != undefined) {
+      dispatch(toggleContent(router.query.content))
+    }
     if (router.query.location != undefined) {
       dispatch(toggleLocation(router.query.location))
     }
@@ -24,10 +27,13 @@ export default function Content() {
 
   const thumbnail = data?.attributes.thumbnail.data.attributes.formats.large
 
+  // console.log('test redux', navigation.content, navigation.location)
+  // console.log('test thumbnail', thumbnail && navigation.content === 'landmark')
+
   return (
     <div className='absolute h-full w-full bg-black'>
       <div className={clsx('absolute h-full w-full')}>
-        {thumbnail && navigation.content === 'location' && (
+        {thumbnail && navigation.content === 'landmark' && (
           <div className='relative h-full w-full'>
             <Image
               src={`${thumbnail.url}`}
@@ -42,7 +48,7 @@ export default function Content() {
           </div>
         )}
       </div>
-      {router.query.content && <Layout></Layout>}
+      {navigation.content != undefined && <Layout></Layout>}
     </div>
   )
 }

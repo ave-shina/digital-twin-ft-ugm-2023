@@ -18,7 +18,7 @@ import Navbar from './Navbar'
 
 import { useSelector } from 'react-redux'
 
-export default function Location(props) {
+export default function Landmark(props) {
   const [openPanorama, setOpenPanorama] = useState(false)
   const navigation = useSelector((state) => state.navigation)
 
@@ -32,11 +32,13 @@ export default function Location(props) {
   const panoramaDetail = data?.attributes?.panoramaDetail
 
   const [currentMap, setCurrentMap] = useState(0)
-  const [currentScene, setCurrentScene] = useState(data?.attributes?.mapDetail[currentMap].MapInformation[0].name)
+  const [currentScene, setCurrentScene] = useState(data?.attributes?.mapDetail[currentMap]?.MapInformation[0]?.name)
 
   const sceneInformation = []
 
-  const mapInformation = data?.attributes?.mapDetail[currentMap].MapInformation
+  const mapInformation = data?.attributes?.mapDetail[currentMap]?.MapInformation
+    ? data?.attributes?.mapDetail[currentMap]?.MapInformation
+    : []
   for (let i = 0; i < mapInformation.length; i++) {
     sceneInformation.push({
       sceneName: mapInformation[i]?.name,
@@ -48,7 +50,7 @@ export default function Location(props) {
   // console.log(sceneInformation)
 
   useEffect(() => {
-    setCurrentScene(mapInformation[0].name)
+    setCurrentScene(mapInformation[0] ? mapInformation[0].name : 0)
   }, [currentMap])
 
   // console.log('test', sceneInformation)
@@ -158,12 +160,12 @@ export default function Location(props) {
     }
   }
 
-  const [title, setQuestion] = useState({ state: 0 })
-  const [prevTitle, setPrevQuestion] = useState({ state: 0 })
+  const [title, setTitle] = useState({ state: 0 })
+  const [prevTitle, setPrevTitle] = useState({ state: 0 })
   const [open, setOpen] = useState(false)
   useEffect(() => {
     if (title.state !== prevTitle.state) {
-      setPrevQuestion(title)
+      setPrevTitle(title)
       setOpen(true)
     } else if (title.state === prevTitle.state) {
       setOpen(!open)
@@ -220,7 +222,7 @@ export default function Location(props) {
                     <div
                       className={clsx('mb-2 flex cursor-pointer flex-row items-center justify-between')}
                       onClick={() => {
-                        setQuestion({ state: index })
+                        setTitle({ state: index })
                       }}>
                       <div
                         className={clsx(

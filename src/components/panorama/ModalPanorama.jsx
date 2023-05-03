@@ -32,7 +32,9 @@ export default function ModalPanorama(props) {
   }, [currentScene])
 
   const navigation = useSelector((state) => state.navigation)
-  // console.log(sceneObject)
+  console.log(sceneObject)
+
+  // console.log(currentScene)
 
   return (
     <div

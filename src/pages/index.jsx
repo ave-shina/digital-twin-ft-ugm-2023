@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from 'react'
 import Loading from '@/components/Loading'
-import { useProgress } from '@react-three/drei'
 import dynamic from 'next/dynamic'
 import StoryBoard from '@/components/StoryBoard'
 import Tutorial from '@/components/Tutorial'
@@ -13,6 +12,8 @@ import TopRight from '@/components/navigation/TopRight'
 
 import Layout from '@/components/content/Layout'
 
+import { useRouter } from 'next/router'
+
 const Scene = dynamic(() => import('../components/canvas/Scene'), { ssr: true })
 import { useSelector, useDispatch } from 'react-redux'
 import { setFirstTutorial } from 'redux/navigation'
@@ -23,11 +24,11 @@ export default function Page(props) {
 
   const [introduction, setIntroduction] = useState('storyBoard')
 
-  const [content, setContent] = useState('')
-
   const [freeControl, setFreeControl] = useState(false)
 
   const myRef = useRef()
+
+  const router = useRouter()
 
   const [musicStart, setMusicStart] = useState(false)
   const startVmap = () => {
@@ -54,6 +55,22 @@ export default function Page(props) {
     }
   }, [navigation.music])
 
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        myRef.current.pause()
+      } else {
+        if (navigation.music) {
+          myRef.current.play()
+        }
+      }
+    }
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
+    }
+  }, [navigation.music])
+
   return (
     <>
       <Loading></Loading>
@@ -70,7 +87,6 @@ export default function Page(props) {
           colorManagement
           shadowMap
           introduction={introduction}
-          setContent={setContent}
           freeControl={freeControl}
           className='pointer-events-none'
           eventSource={props.ref}
@@ -82,7 +98,7 @@ export default function Page(props) {
         {introduction === 'storyBoard' && <StoryBoard startVmap={startVmap} />}
         {introduction === 'tutorial' && <Tutorial setIntroduction={setIntroduction} />}
 
-        <Layout setContent={setContent} content={content}></Layout>
+        {router.query.content && <Layout></Layout>}
 
         {/*  */}
         {/*  */}
@@ -110,5 +126,5 @@ export default function Page(props) {
 // Page.canvas = (props) => <Logo scale={0.5} route='/blob' position-y={-1} />
 
 export async function getStaticProps() {
-  return { props: { title: 'Virtual Tour Map FT UGM' } }
+  return { props: { title: 'Virtual Tour FT UGM' } }
 }

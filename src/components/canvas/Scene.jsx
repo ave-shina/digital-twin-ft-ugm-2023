@@ -11,6 +11,8 @@ import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { toggleLocation, toggleContent } from 'redux/navigation'
 
+import { useRouter } from 'next/router'
+
 export default function Scene({ children, ...props }) {
   const { freeControl, introduction, showTooltip } = props
 
@@ -99,13 +101,24 @@ export default function Scene({ children, ...props }) {
       locationData.camera = { x: 200, y: 0, z: 10 }
   }
 
+  const router = useRouter()
+
   const toggleZoom = (e) => {
     if (navigation.location != '') {
       dispatch(toggleContent(''))
       dispatch(toggleLocation(''))
+      router.push('/')
     } else if (navigation.location === '') {
-      dispatch(toggleContent('location'))
+      dispatch(toggleContent('landmark'))
       dispatch(toggleLocation(e))
+      router.push(
+        {
+          pathname: '/',
+          query: { content: 'landmark', location: e },
+        },
+        `/landmark?location=${e}`,
+        { shallow: true },
+      )
     }
   }
 

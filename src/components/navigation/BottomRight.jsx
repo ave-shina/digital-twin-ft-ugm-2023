@@ -2,15 +2,24 @@ import React from 'react'
 import clsx from 'clsx'
 import { useDispatch } from 'react-redux'
 import { toggleContent, setShowTooltip } from 'redux/navigation'
+import { useRouter } from 'next/router'
 
 export default function BottomRight(props) {
   const dispatch = useDispatch()
-
+  const router = useRouter()
   return (
     <button
       onClick={() => {
         dispatch(toggleContent('about'))
         dispatch(setShowTooltip(false))
+        router.push(
+          {
+            pathname: '/',
+            query: { content: 'faq' },
+          },
+          `/faq`,
+          { shallow: true },
+        )
       }}
       className={clsx(
         'group absolute bottom-6 right-6 z-20 flex h-14 cursor-pointer  items-center justify-center rounded-full  ',

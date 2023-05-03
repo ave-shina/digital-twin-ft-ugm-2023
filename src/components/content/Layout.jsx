@@ -9,7 +9,7 @@ const Tour = dynamic(() => import('./Tour'), {
 })
 import Faq from './Faq'
 import About from './About'
-const Location = dynamic(() => import('./Location'), {
+const Landmark = dynamic(() => import('./Landmark'), {
   ssr: false,
 })
 
@@ -17,29 +17,10 @@ import { useSelector } from 'react-redux'
 
 export default function Layout(props) {
   const navigation = useSelector((state) => state.navigation)
-  const [scrollY, setScrollY] = useState(0)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(document.documentElement.scrollTop)
-    }
-
-    // just trigger this so that the initial state
-    // is updated as soon as the component is mounted
-    // related: https://stackoverflow.com/a/63408216
-    handleScroll()
-
-    window.addEventListener('scroll', handleScroll)
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
 
   return (
     <>
-      {navigation.content != '' && navigation.content !== 'location' && (
+      {navigation.content != '' && navigation.content !== 'landmark' && (
         <div className={clsx('absolute h-full  w-full', navigation.showTooltip ? 'z-[99999999]' : '')}>
           <div className={clsx('  min-h-full w-full ', navigation.theme === 'dark' ? 'bg-black' : 'bg-white')}>
             <Navbar></Navbar>
@@ -53,10 +34,10 @@ export default function Layout(props) {
         </div>
       )}
 
-      {navigation.content != '' && navigation.content === 'location' && (
+      {navigation.content != '' && navigation.content === 'landmark' && (
         <div className={clsx('absolute z-10 h-full w-full ')}>
           <div className={clsx('relative flex min-h-full w-full flex-col items-start justify-center  ')}>
-            {navigation.content === 'location' && <Location></Location>}
+            {navigation.content === 'landmark' && <Landmark></Landmark>}
           </div>
         </div>
       )}

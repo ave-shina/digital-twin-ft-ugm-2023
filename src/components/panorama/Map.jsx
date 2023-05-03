@@ -32,6 +32,18 @@ function Map(props) {
     }
   }, [])
 
+  const handleMouseEnter = (e) => {
+    // Set the cursor style to a pointer when the mouse is over the circle
+    const container = e.target.getStage().container()
+    container.style.cursor = 'pointer'
+  }
+
+  const handleMouseLeave = (e) => {
+    // Reset the cursor style when the mouse leaves the circle
+    const container = e.target.getStage().container()
+    container.style.cursor = 'default'
+  }
+
   return (
     <div
       className={clsx(
@@ -62,6 +74,9 @@ function Map(props) {
                       y={data.y}
                       radius={5}
                       fill='red'
+                      cursor='pointer'
+                      onMouseEnter={handleMouseEnter}
+                      onMouseLeave={handleMouseLeave}
                       onClick={(area) => {
                         setCurrentScene(data.name)
                         setOpenPanorama(true)

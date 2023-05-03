@@ -25,8 +25,8 @@ export default function Model({ ...props }) {
     { name: 'TUGU TEKNIK', position: [61.33, 7.82, 22.06] },
     { name: 'SGLC', position: [-36.13, 5.12, 25.22] },
     { name: 'PERPUSTAKAAN', position: [-18.1, 9.93, 41.7] },
-    { name: 'MUSHOLA', position: [-58.2, 8.58, -33.63] },
-    { name: 'ERICS', position: [108.55, 9.99, 10.4] },
+    { name: 'MASJID FT', position: [-58.2, 8.58, -33.63] },
+    { name: 'ERIC', position: [108.55, 9.99, 10.4] },
   ]
 
   const [object, setObject] = useState([])
@@ -3740,6 +3740,7 @@ function SpriteHover(props) {
         style={{
           background: 'white',
           fontSize: '148px',
+          textAlign: 'center',
           padding: '10px 45px',
           borderRadius: '25px',
           display: props.object ? 'block' : 'none',

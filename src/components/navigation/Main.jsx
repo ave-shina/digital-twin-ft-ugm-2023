@@ -2,10 +2,13 @@ import React from 'react'
 import clsx from 'clsx'
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleContent, setShowTooltip } from 'redux/navigation'
+import { useRouter } from 'next/router'
 
 export default function Main(props) {
   const navigation = useSelector((state) => state.navigation)
   const dispatch = useDispatch()
+
+  const router = useRouter()
   return (
     <div
       className={clsx(
@@ -37,6 +40,14 @@ export default function Main(props) {
       <button
         onClick={() => {
           dispatch(toggleContent('tour'))
+          router.push(
+            {
+              pathname: '/',
+              query: { content: 'tour' },
+            },
+            `/tour`,
+            { shallow: true },
+          )
         }}
         className={clsx(
           ' group flex h-10 w-10 cursor-pointer items-center  justify-center  rounded-full hover:bg-white sm:h-14 sm:w-14 ',
@@ -51,6 +62,14 @@ export default function Main(props) {
       <button
         onClick={() => {
           dispatch(toggleContent('faq'))
+          router.push(
+            {
+              pathname: '/',
+              query: { content: 'faq' },
+            },
+            `/faq`,
+            { shallow: true },
+          )
         }}
         className={clsx(
           ' group flex h-10 w-10 cursor-pointer items-center  justify-center  rounded-full hover:bg-white sm:h-14 sm:w-14 ',

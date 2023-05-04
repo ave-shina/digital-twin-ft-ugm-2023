@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 
 import Layout from '@/components/content/Layout'
 
@@ -30,8 +30,42 @@ export default function Content() {
   // console.log('test redux', navigation.content, navigation.location)
   // console.log('test thumbnail', thumbnail && navigation.content === 'landmark')
 
+  const myRef = useRef()
+
+  useEffect(() => {
+    if (!navigation.music) {
+      myRef.current.pause()
+    } else if (navigation.music) {
+      myRef.current.play()
+      myRef.current.volume = 0.1
+      myRef.current.loop = true
+    }
+  }, [navigation.music])
+
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        myRef.current.pause()
+      } else {
+        if (navigation.music) {
+          myRef.current.play()
+        }
+      }
+    }
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
+    }
+  }, [navigation.music])
+
   return (
     <div className='absolute h-full w-full bg-black'>
+      <audio ref={myRef} preload='none'>
+        <source
+          src='https://drive.google.com/uc?authuser=0&id=1nm8IgNlq-mi1jS9W6Pg9UtE1obAaXAGD&export=download'
+          type='audio/mpeg'
+        />
+      </audio>
       <div className={clsx('absolute h-full w-full')}>
         {thumbnail && navigation.content === 'landmark' && (
           <div className='relative h-full w-full'>

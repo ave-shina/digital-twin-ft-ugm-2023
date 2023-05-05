@@ -85,13 +85,13 @@ export default function Scene({ children, ...props }) {
       locationData.target = { x: -30.1, z: 65.7 }
       locationData.camera = { x: 5, y: 25, z: -10 }
       break
-    case 'MUSHOLA':
+    case 'MASJID':
       locationData.name = 'MUSHOLA'
       locationData.target = { x: -80.2, z: -38.63 }
       locationData.camera = { x: 0, y: 40, z: -20 }
       break
-    case 'ERICS':
-      locationData.name = 'ERICS'
+    case 'ERIC':
+      locationData.name = 'ERIC'
       locationData.target = { x: 100.55, z: 0.4 }
       locationData.camera = { x: 200, y: 55, z: 90 }
       break

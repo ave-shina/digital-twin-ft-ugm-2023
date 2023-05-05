@@ -2411,7 +2411,7 @@ export const Landmarks = {
     {
       id: 14,
       attributes: {
-        name: 'MASJID AL-MUSTADAM',
+        name: 'MASJID',
         isDescription: false,
         description:
           '<p style="margin-left:0px;text-align:justify;"><span style="background-color:rgb(255,255,255);color:rgb(34,34,34);">Masjid Al-Mustadam Fakultas Teknik UGM telah diresmikan pada Ahad, 10 Juli 2022. Al-Mustadam berarti&nbsp;lestari, berkelanjutan, </span><i>sustainable.</i></p><p style="margin-left:0px;text-align:justify;">&nbsp;</p><p style="margin-left:0px;text-align:justify;">Masjid Al-Mustadam merupakan pengembangan/renovasi dari Musholla Teknik yang dibangun pada tahun 1999/2000. Peletakan batu pertama renovasi dilaksanakan 20 September 2018, sementara renovasi dimulai pada 14 Oktober 2019.</p><p style="margin-left:0px;text-align:justify;">&nbsp;</p><p style="margin-left:0px;text-align:justify;">Renovasi dilakukan dengan 2 fase. Fase pertama pengerjaan pondasi, struktur dan atap. Sementara fase 2 dibagi pada 3 tahap: tahap 1 plafond dan lantai 3 serta tempat wudhu; tahap 2 plafond dan lantai 2 serta tangga utara dan selatan, tempat wudhu, fasad; sementara tahap 3 lantai 1 dan taman.</p><p style="margin-left:0px;text-align:justify;">&nbsp;</p><p style="margin-left:0px;text-align:justify;">Masjid yang terdiri dari 3 lantai ini mampu menampung kurang lebih 3000-3500 jamaah, dengan berbagai pemanfaatan. Mulai dari ibadah, kajian, <i>co-working space</i>, menampung tamu, <i>meeting point</i> para purnakarya, dan kegiatan lainnya.</p><p style="margin-left:0px;text-align:justify;">&nbsp;</p><p style="margin-left:0px;text-align:justify;">Pembangunan didukung oleh berbagai pihak. Kontribusi Dr. (HC) Ir. Budi Karya Sumadi dalam penggalangan dana mampu menggerakkan berbagai donatur untuk ikut berkontribusi. Beberapa pihak yang turut berkontribusi pada renovasi/pengembangan ini antara lain: BRI, PT KPN, LEN Railway System, PT KCIC, PT PP, Angkasa Pura II, Pelindo, dan berbagai instansi lainnya. Tentu saja, alumni berbagai departemen yang tergabung dalam KATGAMA.</p><p style="margin-left:0px;">&nbsp;</p><p style="margin-left:0px;text-align:justify;">Nama Al-Mustadam dipilih sebagai nama karena beberapa hal. Masjid mempertahankan bangunan lama, tidak boros material dan sumber daya alam, mengurangi <i>carbon footprint</i>.&nbsp;Desain fasad bisa meneruskan udara segar, tidak menggunakan AC dan memanfaatkan pencahayaan alami, mengurangi potensi penularan virus dan penyakit karena <i>fresh air</i> yang melimpah.</p><p style="margin-left:0px;text-align:justify;">&nbsp;</p><p style="margin-left:0px;text-align:justify;">Air wudhu akan digunakan kembali untuk sistem siram tanaman di taman dan <i>landscape</i> SGLC, masjid dan sekitarnya, sehingga dapat menciptakan lingkungan yang hijau dan asri. Masjid juga dibangun ramah terhadap difable, orang lanjut usia, dan anak-anak.</p><p style="margin-left:0px;text-align:justify;">&nbsp;</p><p style="margin-left:0px;text-align:justify;">Al-Mustadam diharapkan juga menjadi pelecut semangat melestarikan dan mengoptimalkan fungsi masjid untuk ibadah, muamalah, penanaman integritas, tempat rekreasi, belajar dan bersosialisasi.</p>',
@@ -2420,7 +2420,7 @@ export const Landmarks = {
         isGallery: false,
         isPanorama: false,
         location: null,
-        objectName: 'MASJID AL-MUSTADAM',
+        objectName: 'MASJID',
         uid: 'masjid-al-mustadam',
         createdAt: '2023-05-02T17:21:24.837Z',
         updatedAt: '2023-05-02T17:21:45.158Z',

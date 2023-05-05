@@ -18,6 +18,28 @@
   }
 }
 
+h3 {
+  font-weight: 500;
+  font-size: 24px;
+}
+
+a {
+  text-decoration: underline;
+}
+
+li {
+  list-style-type: disc;
+}
+
+figure,
+.image_resized {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
 @keyframes bg-blur {
   0% {
     opacity: 0;

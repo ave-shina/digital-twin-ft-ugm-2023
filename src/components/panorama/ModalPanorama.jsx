@@ -96,7 +96,7 @@ export default function ModalPanorama(props) {
                 <Pannellum
                   ref={panImage}
                   width='100%'
-                  height='500px'
+                  height='100%'
                   image={sceneObject.scenePanoImg.url}
                   autoLoad
                   onMouseup={(event) => {

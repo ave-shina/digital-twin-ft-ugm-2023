@@ -25,7 +25,7 @@ export default function Model({ ...props }) {
     { name: 'TUGU TEKNIK', position: [61.33, 7.82, 22.06] },
     { name: 'SGLC', position: [-36.13, 5.12, 25.22] },
     { name: 'PERPUSTAKAAN', position: [-18.1, 9.93, 41.7] },
-    { name: 'MASJID FT', position: [-58.2, 8.58, -33.63] },
+    { name: 'MASJID', position: [-58.2, 8.58, -33.63] },
     { name: 'ERIC', position: [108.55, 9.99, 10.4] },
   ]
 
@@ -3663,14 +3663,14 @@ export default function Model({ ...props }) {
           onClick={(e) => (toggleZoom('DTSL'), e.stopPropagation())}
         />
         <mesh
-          onPointerOver={(e) => (handleHover('ERICS'), e.stopPropagation())}
+          onPointerOver={(e) => (handleHover('ERIC'), e.stopPropagation())}
           onPointerOut={(e) => (clearHover(e), e.stopPropagation())}
           geometry={nodes.ERIC_BAKE.geometry}
           material={materials.ERIC_BAKE}
           position={[108.55, 9.99, 10.4]}
           rotation={[0, 0.07, 0]}
           scale={0.35}
-          onClick={(e) => (toggleZoom('ERICS'), e.stopPropagation())}
+          onClick={(e) => (toggleZoom('ERIC'), e.stopPropagation())}
         />
         <mesh
           onPointerOver={(e) => (handleHover('DTGD'), e.stopPropagation())}
@@ -3691,13 +3691,13 @@ export default function Model({ ...props }) {
           onClick={(e) => (toggleZoom('DTGL'), e.stopPropagation())}
         />
         <mesh
-          onPointerOver={(e) => (handleHover('MUSHOLA'), e.stopPropagation())}
+          onPointerOver={(e) => (handleHover('MASJID'), e.stopPropagation())}
           onPointerOut={(e) => (clearHover(e), e.stopPropagation())}
           geometry={nodes.MUSTEK_BAKE.geometry}
           material={materials.MUSTEK_BAKE}
           position={[-58.2, 8.58, -33.63]}
           scale={0.49}
-          onClick={(e) => (toggleZoom('MUSHOLA'), e.stopPropagation())}
+          onClick={(e) => (toggleZoom('MASJID'), e.stopPropagation())}
         />
         <mesh
           onPointerOver={(e) => (handleHover('PERPUSTAKAAN'), e.stopPropagation())}

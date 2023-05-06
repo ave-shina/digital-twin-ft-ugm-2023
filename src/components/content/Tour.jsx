@@ -18,7 +18,7 @@ export default function Tour() {
   for (let i = 0; i < mapInformation.length; i++) {
     sceneInformation.push({
       sceneName: mapInformation[i]?.name,
-      scenePanoImg: mapInformation[i].mapImage.data.attributes.formats.large,
+      scenePanoImg: mapInformation[i].mapImage.data.attributes,
       hotSpotsArr: mapInformation[i].panoramaCoordinate,
     })
   }
@@ -42,6 +42,18 @@ export default function Tour() {
     },
   ]
 
+  const [title, setTitle] = useState({ state: 1 })
+  const [prevTitle, setPrevTitle] = useState({ state: 1 })
+  const [open, setOpen] = useState(false)
+  useEffect(() => {
+    if (title.state !== prevTitle.state) {
+      setPrevTitle(title)
+      setOpen(true)
+    } else if (title.state === prevTitle.state) {
+      setOpen(!open)
+    }
+  }, [title])
+
   function Content(content) {
     switch (content) {
       case 'description':
@@ -55,6 +67,8 @@ export default function Tour() {
                 navigation.theme === 'dark' ? ' border-white' : ' border-black',
               )}>
               <Map
+                open={open}
+                currentIndex={title}
                 sceneInformation={sceneInformation}
                 mapInformation={mapInformation}
                 openPanorama={openPanorama}
@@ -92,18 +106,6 @@ export default function Tour() {
         return <></>
     }
   }
-
-  const [title, setTitle] = useState({ state: 1 })
-  const [prevTitle, setPrevTitle] = useState({ state: 1 })
-  const [open, setOpen] = useState(false)
-  useEffect(() => {
-    if (title.state !== prevTitle.state) {
-      setPrevTitle(title)
-      setOpen(true)
-    } else if (title.state === prevTitle.state) {
-      setOpen(!open)
-    }
-  }, [title])
 
   return (
     <>

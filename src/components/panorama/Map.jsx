@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import clsx from 'clsx'
 import { MapInteractionCSS } from 'react-map-interaction'
-import ImageHotspots from 'react-image-hotspots'
 import { useSelector } from 'react-redux'
 const { Stage, Layer, Image, Circle } = require('react-konva')
 
 function Map(props) {
-  const { setCurrentScene, setOpenPanorama, mapInformation, mapImage, mapName } = props
+  const { setCurrentScene, setOpenPanorama, mapInformation, mapImage, mapName, open, currentIndex } = props
 
   const map = []
 
@@ -17,7 +16,6 @@ function Map(props) {
       name: mapInformation[i].name,
     })
   }
-  const [value, setValue] = useState({ scale: 1.2, translation: { x: 0, y: 0 } })
 
   const navigation = useSelector((state) => state.navigation)
 
@@ -44,6 +42,18 @@ function Map(props) {
     container.style.cursor = 'default'
   }
 
+  const mapContainer = useRef(null)
+  const mapRef = useRef(null)
+  const [value, setValue] = useState(null)
+
+  useEffect(() => {
+    if (mapContainer.current) {
+      const containerWidth = mapContainer.current.offsetWidth
+      const mapWidth = mapRef.current.offsetWidth
+      setValue({ scale: 1, translation: { x: (containerWidth - mapWidth) / 2, y: 0 } })
+    }
+  }, [open, currentIndex])
+
   return (
     <div
       className={clsx(
@@ -51,7 +61,7 @@ function Map(props) {
         navigation.theme === 'dark' ? ' bg-slate-700' : ' bg-slate-200',
       )}>
       <div className={clsx(' relative flex  w-full flex-col items-center justify-center')}>
-        <div className={clsx('flex h-[600px] w-full items-center justify-center overflow-hidden')}>
+        <div ref={mapContainer} className={clsx('flex h-[600px] w-full items-center justify-center overflow-hidden')}>
           <div
             className={clsx(
               ' absolute right-4 top-4 z-10 overflow-hidden rounded-md bg-black px-2 py-1 text-base text-white',
@@ -63,7 +73,7 @@ function Map(props) {
             onChange={(value) => {
               setValue(value)
             }}>
-            <div className={clsx('image-hotspot h-full w-full')}>
+            <div ref={mapRef} className={clsx('image-hotspot h-full w-full')}>
               <Stage width={mapImage.width} height={mapImage.width}>
                 <Layer>
                   {image && <Image image={image} x={0} y={0} scaleX={1} scaleY={1} />}

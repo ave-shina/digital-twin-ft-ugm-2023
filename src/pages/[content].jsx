@@ -25,7 +25,7 @@ export default function Content() {
   const navigation = useSelector((state) => state.navigation)
   const data = Landmarks.data.find((item) => item.attributes.objectName === navigation.location)
 
-  const thumbnail = data?.attributes.thumbnail.data.attributes.formats.large
+  const thumbnail = data?.attributes.thumbnail.data.attributes
 
   // console.log('test redux', navigation.content, navigation.location)
   // console.log('test thumbnail', thumbnail && navigation.content === 'landmark')

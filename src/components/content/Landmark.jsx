@@ -42,7 +42,7 @@ export default function Landmark(props) {
   for (let i = 0; i < mapInformation.length; i++) {
     sceneInformation.push({
       sceneName: mapInformation[i]?.name,
-      scenePanoImg: mapInformation[i].mapImage.data.attributes.formats.large,
+      scenePanoImg: mapInformation[i].mapImage.data.attributes,
       hotSpotsArr: mapInformation[i].panoramaCoordinate,
     })
   }
@@ -78,6 +78,18 @@ export default function Landmark(props) {
     },
   ]
 
+  const [title, setTitle] = useState({ state: 1 })
+  const [prevTitle, setPrevTitle] = useState({ state: 1 })
+  const [open, setOpen] = useState(false)
+  useEffect(() => {
+    if (title.state !== prevTitle.state) {
+      setPrevTitle(title)
+      setOpen(true)
+    } else if (title.state === prevTitle.state) {
+      setOpen(!open)
+    }
+  }, [title])
+
   function Content(content) {
     switch (content) {
       case 'description':
@@ -95,6 +107,8 @@ export default function Landmark(props) {
                 return (
                   <SwiperSlide key={index}>
                     <Map
+                      open={open}
+                      currentIndex={title}
                       currentKey={index}
                       mapImage={item.mapImage.data.attributes.formats.large}
                       mapName={item.name}
@@ -149,9 +163,7 @@ export default function Landmark(props) {
           <>
             {panoramaDetail.map((item, index) => {
               // console.log('test', item.show === true)
-              return (
-                <Panorama panoramaImage={`${item?.panoramaImage?.data.attributes.formats.large.url}`} key={index} />
-              )
+              return <Panorama panoramaImage={`${item?.panoramaImage?.data.attributes.url}`} key={index} />
             })}
           </>
         )
@@ -159,18 +171,6 @@ export default function Landmark(props) {
         return <></>
     }
   }
-
-  const [title, setTitle] = useState({ state: 0 })
-  const [prevTitle, setPrevTitle] = useState({ state: 0 })
-  const [open, setOpen] = useState(false)
-  useEffect(() => {
-    if (title.state !== prevTitle.state) {
-      setPrevTitle(title)
-      setOpen(true)
-    } else if (title.state === prevTitle.state) {
-      setOpen(!open)
-    }
-  }, [title])
 
   return (
     <>
@@ -187,7 +187,7 @@ export default function Landmark(props) {
           <h1 className={clsx('  font-medium leading-none text-white', 'text-6xl sm:text-9xl')}>
             {data.attributes.name}
           </h1>
-          {data.attributes.subName != '' && (
+          {data.attributes.subName != null && (
             <>
               <div className={clsx('mx-4 border-white', 'border-none sm:border sm:border-solid')}></div>
               <p

@@ -32,6 +32,8 @@ export default function ModalPanorama(props) {
   }, [currentScene])
 
   const navigation = useSelector((state) => state.navigation)
+
+  // console.log(sceneObject.scenePanoImg.url)
   // console.log(sceneObject)
 
   // console.log(currentScene)
@@ -52,7 +54,7 @@ export default function ModalPanorama(props) {
         className={clsx(
           'absolute top-0  flex !h-full !w-screen  items-center justify-center bg-black  bg-opacity-80',
         )}></div>
-      <div className={clsx(' absolute z-50 h-[95%] w-full max-w-7xl')}>
+      <div className={clsx(' absolute z-50 h-[90%] w-full max-w-[85%]')}>
         {/* <!-- Modal content --> */}
         <div
           className={clsx(
@@ -61,7 +63,7 @@ export default function ModalPanorama(props) {
           )}>
           {/* <!-- Modal body --> */}
           <div className={clsx('relative flex h-full items-center justify-center  p-4')}>
-            <p className={clsx('absolute bottom-4', navigation.theme === 'dark' ? ' text-white' : ' text-black ')}>
+            <p className={clsx('absolute bottom-4 z-50', navigation.theme === 'dark' ? ' text-white' : ' text-black ')}>
               pitch: {pitch}, yaw: {yaw}, transition:{' '}
             </p>
             <p

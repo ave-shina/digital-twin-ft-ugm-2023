@@ -13,7 +13,7 @@ export default function Gallery(props) {
   const images = []
 
   for (let i = 0; i < galleryDetail.length; i++) {
-    images.push(`${galleryDetail[i]?.galleryImage.data.attributes.formats.large.url}`)
+    images.push(`${galleryDetail[i]?.galleryImage.data.attributes.url}`)
   }
 
   useEffect(() => {
@@ -23,25 +23,25 @@ export default function Gallery(props) {
   const galleryList = (
     <div
       className={clsx(
-        'lightbox leading-companies grid h-auto w-full grid-cols-2 items-center sm:space-x-3',
-        'space-y-4 sm:space-y-2',
+        'lightbox leading-companies grid h-full w-full grid-cols-2 items-center ',
         galleryDetail.length > 2 ? 'md:grid-cols-3' : 'md:grid-cols-2',
       )}>
       {galleryDetail?.map((item, index) => (
         <div
           className={clsx(
-            ' relative my-2 flex w-auto cursor-pointer items-center justify-center overflow-hidden rounded-md border border-solid  border-black',
+            'relative  flex h-80  w-full cursor-pointer items-center justify-center overflow-hidden rounded-md border border-solid  border-black',
           )}
           key={index}
           onClick={() => (setPhotoIndex({ key: index }), setIsOpen({ open: true }))}>
           <Image
-            src={`${item?.galleryImage.data.attributes.formats.thumbnail.url}`}
-            className='h-full w-full'
+            src={`${item?.galleryImage.data.attributes.url}`}
+            className='h-full w-full hover:scale-110'
             alt={item.name}
             placeholder='blur'
             blurDataURL={'true'}
-            height={100}
-            width={192}
+            height={400}
+            width={402}
+            style={{ objectFit: 'cover' }}
           />
         </div>
       ))}

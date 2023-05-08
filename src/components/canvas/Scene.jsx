@@ -3,7 +3,8 @@ import { Preload, PerformanceMonitor } from '@react-three/drei'
 import Model from './Model'
 import Controls from './Control'
 import * as THREE from 'three'
-// import { Perf } from 'r3f-perf'
+import { Perf } from 'r3f-perf'
+import round from 'lodash/round'
 import Background from '../Background'
 import clsx from 'clsx'
 import React, { useState } from 'react'
@@ -133,11 +134,11 @@ export default function Scene({ children, ...props }) {
         {...props}>
         {/*  */}
         {/*  */}
-        <PerformanceMonitor onIncline={() => setDpr(1.5)} onDecline={() => setDpr(0.75)}>
+        <PerformanceMonitor onChange={({ factor }) => setDpr(round(0.5 + 1 * factor, 1))}>
           <directionalLight intensity={0.75} />
           <ambientLight intensity={0.75} />
           <Preload all />
-          {/* <Perf /> */}
+          <Perf />
           {/*  */}
           {/* */}
           <Controls locationData={locationData} introduction={introduction} freeControl={freeControl} />

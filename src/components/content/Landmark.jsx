@@ -185,9 +185,9 @@ export default function Landmark(props) {
           setCurrentScene={setCurrentScene}></ModalPanorama>
       )}
       <div className={clsx('absolute flex min-h-full w-full ')}>
-        <div className={clsx('absolute bottom-4 left-8 mb-8 flex ', 'flex-col sm:flex-row')}>
+        <div className={clsx('absolute bottom-4 left-4 mb-8 flex sm:left-8 ', 'flex-col sm:flex-row')}>
           <h1 className={clsx('  font-medium leading-none text-white', 'text-6xl sm:text-9xl')}>
-            {data.attributes.name}
+            {data.attributes.objectName}
           </h1>
           {data.attributes.subName != null && (
             <>

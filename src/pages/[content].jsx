@@ -77,6 +77,7 @@ export default function Content() {
               blurDataURL={'true'}
               height={720}
               width={192}
+              style={{ objectFit: 'cover' }}
               unoptimized
             />
           </div>

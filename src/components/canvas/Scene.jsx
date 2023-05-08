@@ -133,7 +133,7 @@ export default function Scene({ children, ...props }) {
         {...props}>
         {/*  */}
         {/*  */}
-        <PerformanceMonitor onIncline={() => setDpr(2)} onDecline={() => setDpr(0.75)}>
+        <PerformanceMonitor onIncline={() => setDpr(1.5)} onDecline={() => setDpr(0.75)}>
           <directionalLight intensity={0.75} />
           <ambientLight intensity={0.75} />
           <Preload all />

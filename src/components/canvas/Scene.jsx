@@ -122,30 +122,33 @@ export default function Scene({ children, ...props }) {
     }
   }
 
-  const [dpr, setDpr] = useState(1)
+  const [dpr, setDpr] = useState(1.5)
   // console.log(navigation)
   return (
     <div className={clsx('absolute h-full w-full')}>
       <Canvas
+        dpr={dpr}
         frameloop='demand'
         camera={{ fov: config.camSBAwalFov, near: 0.1, far: 500, position: config.camStartPosition }}
         {...props}>
         {/*  */}
         {/*  */}
-        <directionalLight intensity={0.75} />
-        <ambientLight intensity={0.75} />
-        <Preload all />
-        {/* <Perf /> */}
-        {/*  */}
-        {/* */}
-        <Controls locationData={locationData} introduction={introduction} freeControl={freeControl} />
-        <Model showTooltip={showTooltip} locationData={locationData} toggleZoom={toggleZoom}></Model>
-        <Background theme={navigation.theme} />
-        {/*  */}
-        {/*  */}
-        {children}
-        {/*  */}
-        {/*  */}
+        <PerformanceMonitor onIncline={() => setDpr(2)} onDecline={() => setDpr(1)}>
+          <directionalLight intensity={0.75} />
+          <ambientLight intensity={0.75} />
+          <Preload all />
+          {/* <Perf /> */}
+          {/*  */}
+          {/* */}
+          <Controls locationData={locationData} introduction={introduction} freeControl={freeControl} />
+          <Model showTooltip={showTooltip} locationData={locationData} toggleZoom={toggleZoom}></Model>
+          <Background theme={navigation.theme} />
+          {/*  */}
+          {/*  */}
+          {children}
+          {/*  */}
+          {/*  */}
+        </PerformanceMonitor>
       </Canvas>
     </div>
   )

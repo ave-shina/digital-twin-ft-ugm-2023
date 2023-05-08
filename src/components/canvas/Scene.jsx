@@ -122,7 +122,7 @@ export default function Scene({ children, ...props }) {
     }
   }
 
-  const [dpr, setDpr] = useState(1.5)
+  const [dpr, setDpr] = useState(1)
   // console.log(navigation)
   return (
     <div className={clsx('absolute h-full w-full')}>
@@ -133,7 +133,7 @@ export default function Scene({ children, ...props }) {
         {...props}>
         {/*  */}
         {/*  */}
-        <PerformanceMonitor onIncline={() => setDpr(2)} onDecline={() => setDpr(1)}>
+        <PerformanceMonitor onIncline={() => setDpr(2)} onDecline={() => setDpr(0.75)}>
           <directionalLight intensity={0.75} />
           <ambientLight intensity={0.75} />
           <Preload all />

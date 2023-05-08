@@ -11,7 +11,7 @@ export default function Model({ ...props }) {
   const navigation = useSelector((state) => state.navigation)
   const { toggleZoom } = props
   const group = useRef()
-  const { nodes, materials } = useGLTF('object/baked-o.glb')
+  const { nodes, materials } = useGLTF('object/map-min.glb')
 
   const locationData = [
     { name: 'DTETI', position: [-59.97, 8.8, 53.76] },
@@ -78,10 +78,325 @@ export default function Model({ ...props }) {
           scale={9.27}
         />
         <mesh
-          geometry={nodes.SEA_BAKE.geometry}
-          material={materials['Material.009']}
+          geometry={nodes.OUTSIDE_ISLAND_BAKE.geometry}
+          material={materials.OUTSIDE_ISLAND_BAKE}
           position={[3.48, 2.62, -1.24]}
           scale={165.96}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE002.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[-125, 5.31, -206.76]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE004.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[27.86, 5.31, -194.56]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE006.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[-22.21, 5.31, -228.53]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE007.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[-21.81, 5.31, -194.23]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE008.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[83.83, 5.31, -205.27]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE009.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[154.5, 5.31, -228.23]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE010.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[193.18, 5.31, -228.17]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE012.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[-63.38, 5.31, 205.1]}
+          rotation={[Math.PI / 2, 0, 3.14]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE013.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[-20.45, 5.31, 218.06]}
+          rotation={[Math.PI / 2, 0, 3.14]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE014.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[-114.85, 5.31, 200.48]}
+          rotation={[Math.PI / 2, 0, 3.14]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE015.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[-122.65, 5.31, 204.35]}
+          rotation={[Math.PI / 2, 0, 3.14]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE016.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[-165.19, 5.31, 223.59]}
+          rotation={[Math.PI / 2, 0, 3.14]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE017.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[106.64, 5.31, 216.18]}
+          rotation={[Math.PI / 2, 0, 3.14]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE019.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[165.21, 5.31, 206.95]}
+          rotation={[Math.PI / 2, 0, 3.14]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE020.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[182.41, 5.31, 206.88]}
+          rotation={[Math.PI / 2, 0, 3.14]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[-105.19, 5.31, -206.12]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE021.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[-11.21, 5.31, 217.88]}
+          rotation={[Math.PI / 2, 0, 3.14]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE022.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[-89.66, 5.31, 205.64]}
+          rotation={[Math.PI / 2, 0, 3.14]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE023.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[9.61, 5.31, 218.26]}
+          rotation={[Math.PI / 2, 0, 3.14]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE025.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[-109.73, 5.31, 240.96]}
+          rotation={[Math.PI / 2, 0, 3.14]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE026.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[-78.67, 5.31, 240.64]}
+          rotation={[Math.PI / 2, 0, 3.14]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE027.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[18.23, 5.31, 218.33]}
+          rotation={[Math.PI / 2, 0, 3.14]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE028.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[-181.58, 5.31, 209.34]}
+          rotation={[Math.PI / 2, 0, 3.14]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE030.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[65.54, 5.31, 216.05]}
+          rotation={[Math.PI / 2, 0, 3.14]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE031.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[72.56, 5.31, 192.53]}
+          rotation={[Math.PI / 2, 0, 3.14]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE032.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[97.52, 5.31, 192.53]}
+          rotation={[Math.PI / 2, 0, 3.14]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE001.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[-197.16, 5.31, -203.37]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE003.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[-178.87, 5.31, -204.03]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE011.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[3.19, 5.31, -194.41]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE018.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[2.79, 5.31, -228.72]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE024.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[27.43, 5.31, -228.17]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE029.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[-95.78, 5.31, -206.12]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE033.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[-74.75, 5.31, -206.56]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE005.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[-68.84, 5.31, -238.1]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE034.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[-100.16, 5.31, -238.54]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE035.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[-130.16, 5.31, -238.97]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE036.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[3.23, 5.31, -214.04]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE037.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[97.39, 5.31, -205.53]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE038.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[69.51, 5.31, -205.4]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE039.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[111.21, 5.31, -205.4]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE040.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[142.71, 5.31, -202.24]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE041.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[163.33, 5.31, -202.29]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE042.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[184.35, 5.31, -202.23]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE043.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[204.1, 5.31, -202.24]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={3.22}
+        />
+        <mesh
+          geometry={nodes.CHICKEN_COP_BAKE044.geometry}
+          material={materials['CHICKEN_COP.001']}
+          position={[172.89, 5.31, -228.1]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={3.22}
         />
         <mesh
           geometry={nodes.PLANE_IN_BAKE.geometry}
@@ -202,9 +517,9 @@ export default function Model({ ...props }) {
         <mesh
           geometry={nodes.BirchTree_1_Cube015.geometry}
           material={materials.BIRCHTREE_1_BAKE}
-          position={[-152.65, 5.35, -51.67]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={2.39}
+          position={[-168.44, 5.35, -215.71]}
+          rotation={[1.57, 0, -1.57]}
+          scale={2.63}
         />
         <mesh
           geometry={nodes.BirchTree_1_Cube016.geometry}
@@ -240,6 +555,69 @@ export default function Model({ ...props }) {
           position={[-209.63, 5.35, -28.11]}
           rotation={[Math.PI / 2, 0, 0]}
           scale={2.82}
+        />
+        <mesh
+          geometry={nodes.BirchTree_1_Cube021.geometry}
+          material={materials.BIRCHTREE_1_BAKE}
+          position={[-184.54, 5.35, 223.47]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.05}
+        />
+        <mesh
+          geometry={nodes.BirchTree_1_Cube022.geometry}
+          material={materials.BIRCHTREE_1_BAKE}
+          position={[41.24, 5.35, -211.6]}
+          rotation={[1.57, 0, -1.33]}
+          scale={3.1}
+        />
+        <mesh
+          geometry={nodes.BirchTree_1_Cube023.geometry}
+          material={materials.BIRCHTREE_1_BAKE}
+          position={[39.49, 5.35, -225.39]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={3.1}
+        />
+        <mesh
+          geometry={nodes.BirchTree_1_Cube024.geometry}
+          material={materials.BIRCHTREE_1_BAKE}
+          position={[20.22, 5.35, -211.81]}
+          rotation={[1.57, 0, -1.46]}
+          scale={3.1}
+        />
+        <mesh
+          geometry={nodes.BirchTree_1_Cube025.geometry}
+          material={materials.BIRCHTREE_1_BAKE}
+          position={[-9.57, 5.35, -211.6]}
+          rotation={[1.57, 0, -1.46]}
+          scale={3.1}
+        />
+        <mesh
+          geometry={nodes.BirchTree_1_Cube026.geometry}
+          material={materials.BIRCHTREE_1_BAKE}
+          position={[-28.18, 5.35, -211.81]}
+          rotation={[1.57, 0, -1.46]}
+          scale={3.1}
+        />
+        <mesh
+          geometry={nodes.BirchTree_1_Cube027.geometry}
+          material={materials.BIRCHTREE_1_BAKE}
+          position={[-33, 5.35, -225.61]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={3.1}
+        />
+        <mesh
+          geometry={nodes.BirchTree_1_Cube028.geometry}
+          material={materials.BIRCHTREE_1_BAKE}
+          position={[40.37, 5.35, -192.76]}
+          rotation={[1.57, 0, -1.33]}
+          scale={3.1}
+        />
+        <mesh
+          geometry={nodes.BirchTree_1_Cube029.geometry}
+          material={materials.BIRCHTREE_1_BAKE}
+          position={[-29.93, 5.35, -193.86]}
+          rotation={[1.57, 0, -1.33]}
+          scale={3.1}
         />
         <mesh
           geometry={nodes.BirchTree_2_Cube001.geometry}
@@ -401,6 +779,104 @@ export default function Model({ ...props }) {
           position={[132.7, 5.35, 130.66]}
           rotation={[Math.PI / 2, 0, 1.51]}
           scale={3.23}
+        />
+        <mesh
+          geometry={nodes.BirchTree_2_Cube009.geometry}
+          material={materials.BIRCHTREE_2_BAKE}
+          position={[-72.99, 5.35, 203.85]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={2.74}
+        />
+        <mesh
+          geometry={nodes.BirchTree_2_Cube013.geometry}
+          material={materials.BIRCHTREE_2_BAKE}
+          position={[60.27, 5.29, -216.54]}
+          rotation={[Math.PI / 2, 0, 3.01]}
+          scale={3.27}
+        />
+        <mesh
+          geometry={nodes.BirchTree_2_Cube015.geometry}
+          material={materials.BIRCHTREE_2_BAKE}
+          position={[164.42, 5.29, -225.41]}
+          rotation={[Math.PI / 2, 0, 3.01]}
+          scale={3.27}
+        />
+        <mesh
+          geometry={nodes.BirchTree_2_Cube020.geometry}
+          material={materials.BIRCHTREE_2_BAKE}
+          position={[-103.32, 5.35, 207.86]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.72}
+        />
+        <mesh
+          geometry={nodes.BirchTree_2_Cube010.geometry}
+          material={materials.BIRCHTREE_2_BAKE}
+          position={[18.68, 5.29, -225.56]}
+          rotation={[Math.PI / 2, 0, 3.01]}
+          scale={3.27}
+        />
+        <mesh
+          geometry={nodes.BirchTree_2_Cube012.geometry}
+          material={materials.BIRCHTREE_2_BAKE}
+          position={[-11.98, 5.29, -225.78]}
+          rotation={[Math.PI / 2, 0, 3.01]}
+          scale={3.27}
+        />
+        <mesh
+          geometry={nodes.BirchTree_2_Cube030.geometry}
+          material={materials.BIRCHTREE_2_BAKE}
+          position={[-22.28, 5.29, -239.8]}
+          rotation={[Math.PI / 2, 0, 3.01]}
+          scale={3.27}
+        />
+        <mesh
+          geometry={nodes.BirchTree_2_Cube031.geometry}
+          material={materials.BIRCHTREE_2_BAKE}
+          position={[2.47, 5.29, -239.8]}
+          rotation={[Math.PI / 2, 0, 3.01]}
+          scale={3.27}
+        />
+        <mesh
+          geometry={nodes.BirchTree_2_Cube032.geometry}
+          material={materials.BIRCHTREE_2_BAKE}
+          position={[29.19, 5.29, -239.36]}
+          rotation={[Math.PI / 2, 0, 3.01]}
+          scale={3.27}
+        />
+        <mesh
+          geometry={nodes.BirchTree_2_Cube033.geometry}
+          material={materials.BIRCHTREE_2_BAKE}
+          position={[76.87, 5.29, -188.15]}
+          rotation={[Math.PI / 2, 0, 3.01]}
+          scale={3.27}
+        />
+        <mesh
+          geometry={nodes.BirchTree_2_Cube034.geometry}
+          material={materials.BIRCHTREE_2_BAKE}
+          position={[105.39, 5.29, -188.66]}
+          rotation={[Math.PI / 2, 0, 3.01]}
+          scale={3.27}
+        />
+        <mesh
+          geometry={nodes.BirchTree_2_Cube035.geometry}
+          material={materials.BIRCHTREE_2_BAKE}
+          position={[144.92, 5.29, -226.28]}
+          rotation={[Math.PI / 2, 0, 3.01]}
+          scale={3.27}
+        />
+        <mesh
+          geometry={nodes.BirchTree_2_Cube036.geometry}
+          material={materials.BIRCHTREE_2_BAKE}
+          position={[182.16, 5.29, -225.84]}
+          rotation={[Math.PI / 2, 0, 3.01]}
+          scale={3.27}
+        />
+        <mesh
+          geometry={nodes.BirchTree_2_Cube037.geometry}
+          material={materials.BIRCHTREE_2_BAKE}
+          position={[201.65, 5.29, -226.06]}
+          rotation={[Math.PI / 2, 0, 3.01]}
+          scale={3.27}
         />
         <mesh
           geometry={nodes.BirchTree_3_Cube001.geometry}
@@ -725,6 +1201,90 @@ export default function Model({ ...props }) {
           scale={3.29}
         />
         <mesh
+          geometry={nodes.BirchTree_3_Cube012.geometry}
+          material={materials.BIRCHTREE_3_BAKE}
+          position={[55.2, 5.35, 192.93]}
+          rotation={[Math.PI / 2, 0, 0.06]}
+          scale={3.29}
+        />
+        <mesh
+          geometry={nodes.BirchTree_3_Cube049.geometry}
+          material={materials.BIRCHTREE_3_BAKE}
+          position={[-202.87, 4.69, -231.82]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.25}
+        />
+        <mesh
+          geometry={nodes.BirchTree_3_Cube050.geometry}
+          material={materials.BIRCHTREE_3_BAKE}
+          position={[60.02, 4.69, -190.63]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.6}
+        />
+        <mesh
+          geometry={nodes.BirchTree_3_Cube051.geometry}
+          material={materials.BIRCHTREE_3_BAKE}
+          position={[-169.98, 4.69, -230.96]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.25}
+        />
+        <mesh
+          geometry={nodes.BirchTree_3_Cube052.geometry}
+          material={materials.BIRCHTREE_3_BAKE}
+          position={[-186.84, 4.69, -231.55]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.25}
+        />
+        <mesh
+          geometry={nodes.BirchTree_3_Cube053.geometry}
+          material={materials.BIRCHTREE_3_BAKE}
+          position={[204.42, 5.35, 225.05]}
+          rotation={[Math.PI / 2, 0, 0.06]}
+          scale={3.29}
+        />
+        <mesh
+          geometry={nodes.BirchTree_3_Cube054.geometry}
+          material={materials.BIRCHTREE_3_BAKE}
+          position={[141.9, 5.35, 210.89]}
+          rotation={[Math.PI / 2, 0, 0.06]}
+          scale={3.29}
+        />
+        <mesh
+          geometry={nodes.BirchTree_3_Cube055.geometry}
+          material={materials.BIRCHTREE_3_BAKE}
+          position={[141.76, 5.35, 198.58]}
+          rotation={[Math.PI / 2, 0, 0.06]}
+          scale={3.29}
+        />
+        <mesh
+          geometry={nodes.BirchTree_3_Cube048.geometry}
+          material={materials.BIRCHTREE_3_BAKE}
+          position={[163.47, 5.35, 197.67]}
+          rotation={[Math.PI / 2, 0, 0.06]}
+          scale={3.29}
+        />
+        <mesh
+          geometry={nodes.BirchTree_3_Cube056.geometry}
+          material={materials.BIRCHTREE_3_BAKE}
+          position={[184.06, 5.35, 198.11]}
+          rotation={[Math.PI / 2, 0, 0.06]}
+          scale={3.29}
+        />
+        <mesh
+          geometry={nodes.BirchTree_3_Cube057.geometry}
+          material={materials.BIRCHTREE_3_BAKE}
+          position={[65.23, 5.35, 208.74]}
+          rotation={[Math.PI / 2, 0, 0.06]}
+          scale={3.29}
+        />
+        <mesh
+          geometry={nodes.BirchTree_3_Cube058.geometry}
+          material={materials.BIRCHTREE_3_BAKE}
+          position={[153.28, 5.35, 211.21]}
+          rotation={[Math.PI / 2, 0, 0.06]}
+          scale={3.29}
+        />
+        <mesh
           geometry={nodes.BirchTree_4_Cube001.geometry}
           material={materials.BIRCHTREE_4_BAKE}
           position={[116.09, 5.35, 85.53]}
@@ -778,6 +1338,27 @@ export default function Model({ ...props }) {
           material={materials.BIRCHTREE_4_BAKE}
           position={[138.49, 5.35, 118.73]}
           rotation={[Math.PI / 2, 0, 0.77]}
+          scale={2.74}
+        />
+        <mesh
+          geometry={nodes.BirchTree_4_Cube004.geometry}
+          material={materials.BIRCHTREE_4_BAKE}
+          position={[183.25, 5.35, 225.26]}
+          rotation={[1.57, 0, 1.65]}
+          scale={2.74}
+        />
+        <mesh
+          geometry={nodes.BirchTree_4_Cube006.geometry}
+          material={materials.BIRCHTREE_4_BAKE}
+          position={[152.52, 5.35, 190.85]}
+          rotation={[1.57, 0, 1.59]}
+          scale={2.74}
+        />
+        <mesh
+          geometry={nodes.BirchTree_4_Cube008.geometry}
+          material={materials.BIRCHTREE_4_BAKE}
+          position={[106.13, 5.35, 208.8]}
+          rotation={[1.57, 0, 1.59]}
           scale={2.74}
         />
         <mesh
@@ -1079,28 +1660,28 @@ export default function Model({ ...props }) {
           material={materials.BIRCHTREE_5_BAKE}
           position={[-85.04, 5.35, 33.57]}
           rotation={[Math.PI / 2, 0, 1.51]}
-          scale={navigation.location === '' ? 1.98 : 1.3}
+          scale={1.7}
         />
         <mesh
           geometry={nodes.BirchTree_5_Cube056.geometry}
           material={materials.BIRCHTREE_5_BAKE}
           position={[-75.59, 5.35, 35.66]}
           rotation={[Math.PI / 2, 0, 1.51]}
-          scale={navigation.location === '' ? 1.55 : 1.2}
+          scale={1.55}
         />
         <mesh
           geometry={nodes.BirchTree_5_Cube057.geometry}
           material={materials.BIRCHTREE_5_BAKE}
           position={[-84.25, 5.35, 44.06]}
           rotation={[Math.PI / 2, 0, 1.51]}
-          scale={navigation.location === '' ? 1.7 : 1.1}
+          scale={1.98}
         />
         <mesh
           geometry={nodes.BirchTree_5_Cube058.geometry}
           material={materials.BIRCHTREE_5_BAKE}
           position={[-76.37, 5.35, 45.89]}
           rotation={[Math.PI / 2, 0, 1.51]}
-          scale={navigation.location === '' ? 1.86 : 1.2}
+          scale={1.86}
         />
         <mesh
           geometry={nodes.BirchTree_5_Cube060.geometry}
@@ -1255,6 +1836,13 @@ export default function Model({ ...props }) {
           position={[-127.06, 5.35, -142.54]}
           rotation={[Math.PI / 2, 0, 1.51]}
           scale={2.18}
+        />
+        <mesh
+          geometry={nodes.BirchTree_5_Cube004.geometry}
+          material={materials.BIRCHTREE_5_BAKE}
+          position={[-203.35, 5.35, -215.94]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.87}
         />
         <mesh
           geometry={nodes.CommonTree_1_Cube057.geometry}
@@ -1451,6 +2039,104 @@ export default function Model({ ...props }) {
           position={[43.63, 5.35, 92.72]}
           rotation={[Math.PI / 2, 0, 1.51]}
           scale={3.96}
+        />
+        <mesh
+          geometry={nodes.CommonTree_1_Cube001.geometry}
+          material={materials.COMMONTREE_1_BAKE}
+          position={[-129.64, 5.35, 234.2]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.96}
+        />
+        <mesh
+          geometry={nodes.CommonTree_1_Cube003.geometry}
+          material={materials.COMMONTREE_1_BAKE}
+          position={[-12.21, 5.35, -194]}
+          rotation={[Math.PI / 2, 0, -1.78]}
+          scale={3.51}
+        />
+        <mesh
+          geometry={nodes.CommonTree_1_Cube004.geometry}
+          material={materials.COMMONTREE_1_BAKE}
+          position={[-100.84, 5.35, -191.67]}
+          rotation={[1.57, 0, -1.73]}
+          scale={3.3}
+        />
+        <mesh
+          geometry={nodes.CommonTree_1_Cube005.geometry}
+          material={materials.COMMONTREE_1_BAKE}
+          position={[-206.18, 5.35, 210.74]}
+          rotation={[1.57, 0, 3.01]}
+          scale={3.96}
+        />
+        <mesh
+          geometry={nodes.CommonTree_1_Cube006.geometry}
+          material={materials.COMMONTREE_1_BAKE}
+          position={[-56.46, 5.35, 233.65]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.96}
+        />
+        <mesh
+          geometry={nodes.CommonTree_1_Cube002.geometry}
+          material={materials.COMMONTREE_1_BAKE}
+          position={[-206.55, 5.35, 194.68]}
+          rotation={[1.57, 0, 3.01]}
+          scale={3.96}
+        />
+        <mesh
+          geometry={nodes.CommonTree_1_Cube007.geometry}
+          material={materials.COMMONTREE_1_BAKE}
+          position={[-207.28, 5.35, 227.72]}
+          rotation={[1.57, 0, 3.01]}
+          scale={3.96}
+        />
+        <mesh
+          geometry={nodes.CommonTree_1_Cube008.geometry}
+          material={materials.COMMONTREE_1_BAKE}
+          position={[-55.55, 5.35, 245.7]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.96}
+        />
+        <mesh
+          geometry={nodes.CommonTree_1_Cube009.geometry}
+          material={materials.COMMONTREE_1_BAKE}
+          position={[-129.83, 5.35, 245.52]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.96}
+        />
+        <mesh
+          geometry={nodes.CommonTree_1_Cube010.geometry}
+          material={materials.COMMONTREE_1_BAKE}
+          position={[18.23, 5.35, -193.78]}
+          rotation={[Math.PI / 2, 0, -1.78]}
+          scale={3.51}
+        />
+        <mesh
+          geometry={nodes.CommonTree_1_Cube011.geometry}
+          material={materials.COMMONTREE_1_BAKE}
+          position={[-126.47, 5.35, -192.33]}
+          rotation={[1.57, 0, -1.73]}
+          scale={3.3}
+        />
+        <mesh
+          geometry={nodes.CommonTree_1_Cube012.geometry}
+          material={materials.COMMONTREE_1_BAKE}
+          position={[-73.91, 5.35, -192.11]}
+          rotation={[1.57, 0, -1.73]}
+          scale={3.3}
+        />
+        <mesh
+          geometry={nodes.CommonTree_1_Cube013.geometry}
+          material={materials.COMMONTREE_1_BAKE}
+          position={[-54.2, 5.35, -192.77]}
+          rotation={[1.57, 0, -1.73]}
+          scale={3.3}
+        />
+        <mesh
+          geometry={nodes.CommonTree_1_Cube014.geometry}
+          material={materials.COMMONTREE_1_BAKE}
+          position={[-145.96, 5.35, -192.55]}
+          rotation={[1.57, 0, -1.73]}
+          scale={3.3}
         />
         <mesh
           geometry={nodes.CommonTree_2_Cube123.geometry}
@@ -1709,7 +2395,7 @@ export default function Model({ ...props }) {
           material={materials.COMMONTREE_2_BAKE}
           position={[-83.24, 5.35, 37.68]}
           rotation={[Math.PI / 2, 0, 1.26]}
-          scale={navigation.location === '' ? 2.74 : 1}
+          scale={2.74}
         />
         <mesh
           geometry={nodes.CommonTree_2_Cube160.geometry}
@@ -1885,6 +2571,41 @@ export default function Model({ ...props }) {
           position={[-43.84, 5.35, -50.94]}
           rotation={[Math.PI / 2, 0, -1.29]}
           scale={2.06}
+        />
+        <mesh
+          geometry={nodes.CommonTree_2_Cube002.geometry}
+          material={materials.COMMONTREE_2_BAKE}
+          position={[-185.2, 5.35, 196.86]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={2.91}
+        />
+        <mesh
+          geometry={nodes.CommonTree_2_Cube003.geometry}
+          material={materials.COMMONTREE_2_BAKE}
+          position={[-133.54, 5.35, 218.36]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={2.96}
+        />
+        <mesh
+          geometry={nodes.CommonTree_2_Cube005.geometry}
+          material={materials.COMMONTREE_2_BAKE}
+          position={[-72.59, 5.35, 218.21]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={2.91}
+        />
+        <mesh
+          geometry={nodes.CommonTree_2_Cube006.geometry}
+          material={materials.COMMONTREE_2_BAKE}
+          position={[-110, 5.35, 218.03]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={2.91}
+        />
+        <mesh
+          geometry={nodes.CommonTree_2_Cube007.geometry}
+          material={materials.COMMONTREE_2_BAKE}
+          position={[-165.02, 5.35, 209.54]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={2.96}
         />
         <mesh
           geometry={nodes.CommonTree_3_Cube057.geometry}
@@ -2083,6 +2804,76 @@ export default function Model({ ...props }) {
           scale={2.74}
         />
         <mesh
+          geometry={nodes.CommonTree_3_Cube001.geometry}
+          material={materials.COMMONTREE_3_BAKE}
+          position={[-53.57, 5.35, 219.34]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.92}
+        />
+        <mesh
+          geometry={nodes.CommonTree_3_Cube002.geometry}
+          material={materials.COMMONTREE_3_BAKE}
+          position={[121.99, 5.35, -218.38]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.96}
+        />
+        <mesh
+          geometry={nodes.CommonTree_3_Cube003.geometry}
+          material={materials.COMMONTREE_3_BAKE}
+          position={[174.94, 5.35, -189]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.96}
+        />
+        <mesh
+          geometry={nodes.CommonTree_3_Cube004.geometry}
+          material={materials.COMMONTREE_3_BAKE}
+          position={[-1.56, 5.35, 192.58]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.92}
+        />
+        <mesh
+          geometry={nodes.CommonTree_3_Cube005.geometry}
+          material={materials.COMMONTREE_3_BAKE}
+          position={[-94.52, 5.35, 234.02]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.92}
+        />
+        <mesh
+          geometry={nodes.CommonTree_3_Cube006.geometry}
+          material={materials.COMMONTREE_3_BAKE}
+          position={[-93.98, 5.35, 246.24]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.92}
+        />
+        <mesh
+          geometry={nodes.CommonTree_3_Cube007.geometry}
+          material={materials.COMMONTREE_3_BAKE}
+          position={[105.64, 5.35, -218.89]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.96}
+        />
+        <mesh
+          geometry={nodes.CommonTree_3_Cube008.geometry}
+          material={materials.COMMONTREE_3_BAKE}
+          position={[75.98, 5.35, -217.62]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.96}
+        />
+        <mesh
+          geometry={nodes.CommonTree_3_Cube009.geometry}
+          material={materials.COMMONTREE_3_BAKE}
+          position={[153.26, 5.35, -188.76]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.96}
+        />
+        <mesh
+          geometry={nodes.CommonTree_3_Cube010.geometry}
+          material={materials.COMMONTREE_3_BAKE}
+          position={[194.36, 5.35, -188.78]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.96}
+        />
+        <mesh
           geometry={nodes.CommonTree_4_Cube071.geometry}
           material={materials.COMMONTREE_4_BAKE}
           position={[-47.02, 5.35, -20.91]}
@@ -2171,7 +2962,7 @@ export default function Model({ ...props }) {
           material={materials.COMMONTREE_4_BAKE}
           position={[-76.43, 5.35, 42.64]}
           rotation={[Math.PI / 2, 0, 1.51]}
-          scale={navigation.location === '' ? 2.74 : 1}
+          scale={2.74}
         />
         <mesh
           geometry={nodes.CommonTree_4_Cube084.geometry}
@@ -2326,6 +3117,55 @@ export default function Model({ ...props }) {
           position={[185.96, 5.35, 137.17]}
           rotation={[Math.PI / 2, 0, 1.51]}
           scale={3.86}
+        />
+        <mesh
+          geometry={nodes.CommonTree_4_Cube001.geometry}
+          material={materials.COMMONTREE_4_BAKE}
+          position={[84.94, 5.35, 193.7]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.64}
+        />
+        <mesh
+          geometry={nodes.CommonTree_4_Cube002.geometry}
+          material={materials.COMMONTREE_4_BAKE}
+          position={[204.24, 5.35, 191.84]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.47}
+        />
+        <mesh
+          geometry={nodes.CommonTree_4_Cube003.geometry}
+          material={materials.COMMONTREE_4_BAKE}
+          position={[115.81, 5.35, 193.84]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.86}
+        />
+        <mesh
+          geometry={nodes.CommonTree_4_Cube004.geometry}
+          material={materials.COMMONTREE_4_BAKE}
+          position={[119.66, 5.35, -189.12]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.81}
+        />
+        <mesh
+          geometry={nodes.CommonTree_4_Cube005.geometry}
+          material={materials.COMMONTREE_4_BAKE}
+          position={[162.37, 5.35, 225.38]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.64}
+        />
+        <mesh
+          geometry={nodes.CommonTree_4_Cube006.geometry}
+          material={materials.COMMONTREE_4_BAKE}
+          position={[141.9, 5.35, 225.08]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.47}
+        />
+        <mesh
+          geometry={nodes.CommonTree_4_Cube007.geometry}
+          material={materials.COMMONTREE_4_BAKE}
+          position={[121.01, 5.35, 217.53]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.64}
         />
         <mesh
           geometry={nodes.CommonTree_5_Cube101.geometry}
@@ -2678,6 +3518,167 @@ export default function Model({ ...props }) {
           scale={3.68}
         />
         <mesh
+          geometry={nodes.CommonTree_5_Cube001.geometry}
+          material={materials.COMMONTREE_5_BAKE}
+          position={[-113.06, 5.35, 189.81]}
+          rotation={[Math.PI / 2, 0, 1.73]}
+          scale={3.68}
+        />
+        <mesh
+          geometry={nodes.CommonTree_5_Cube002.geometry}
+          material={materials.COMMONTREE_5_BAKE}
+          position={[-133.52, 5.35, 189.9]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.75}
+        />
+        <mesh
+          geometry={nodes.CommonTree_5_Cube003.geometry}
+          material={materials.COMMONTREE_5_BAKE}
+          position={[31.42, 5.35, 236.41]}
+          rotation={[1.57, 0, 0.02]}
+          scale={3.75}
+        />
+        <mesh
+          geometry={nodes.CommonTree_5_Cube004.geometry}
+          material={materials.COMMONTREE_5_BAKE}
+          position={[103.11, 5.35, -234.54]}
+          rotation={[Math.PI / 2, 0, 0.55]}
+          scale={2.76}
+        />
+        <mesh
+          geometry={nodes.CommonTree_5_Cube006.geometry}
+          material={materials.COMMONTREE_5_BAKE}
+          position={[-185.81, 5.35, -215.15]}
+          rotation={[1.57, 0, 1.62]}
+          scale={2.76}
+        />
+        <mesh
+          geometry={nodes.CommonTree_5_Cube007.geometry}
+          material={materials.COMMONTREE_5_BAKE}
+          position={[-72.64, 5.35, 190.57]}
+          rotation={[Math.PI / 2, 0, 1.73]}
+          scale={3.68}
+        />
+        <mesh
+          geometry={nodes.CommonTree_5_Cube008.geometry}
+          material={materials.COMMONTREE_5_BAKE}
+          position={[-52.29, 5.35, 190.44]}
+          rotation={[Math.PI / 2, 0, 1.73]}
+          scale={3.68}
+        />
+        <mesh
+          geometry={nodes.CommonTree_5_Cube009.geometry}
+          material={materials.COMMONTREE_5_BAKE}
+          position={[-92.41, 5.35, 189.93]}
+          rotation={[Math.PI / 2, 0, 1.73]}
+          scale={3.68}
+        />
+        <mesh
+          geometry={nodes.CommonTree_5_Cube010.geometry}
+          material={materials.COMMONTREE_5_BAKE}
+          position={[29.69, 5.35, 220.67]}
+          rotation={[1.57, 0, 3.1]}
+          scale={3.75}
+        />
+        <mesh
+          geometry={nodes.CommonTree_5_Cube011.geometry}
+          material={materials.COMMONTREE_5_BAKE}
+          position={[-33.16, 5.35, 218.81]}
+          rotation={[1.57, 0, 3.13]}
+          scale={3.75}
+        />
+        <mesh
+          geometry={nodes.CommonTree_5_Cube012.geometry}
+          material={materials.COMMONTREE_5_BAKE}
+          position={[-32.97, 5.35, 237.85]}
+          rotation={[1.57, 0, 3.1]}
+          scale={3.75}
+        />
+        <mesh
+          geometry={nodes.CommonTree_5_Cube013.geometry}
+          material={materials.COMMONTREE_5_BAKE}
+          position={[-33.31, 5.35, 203.45]}
+          rotation={[1.57, 0, 3.13]}
+          scale={3.75}
+        />
+        <mesh
+          geometry={nodes.CommonTree_5_Cube014.geometry}
+          material={materials.COMMONTREE_5_BAKE}
+          position={[29.54, 5.35, 204.7]}
+          rotation={[1.57, 0, 3.1]}
+          scale={3.75}
+        />
+        <mesh
+          geometry={nodes.CommonTree_5_Cube015.geometry}
+          material={materials.COMMONTREE_5_BAKE}
+          position={[66.35, 5.35, 225.08]}
+          rotation={[Math.PI / 2, 0, 1.49]}
+          scale={3.75}
+        />
+        <mesh
+          geometry={nodes.CommonTree_5_Cube016.geometry}
+          material={materials.COMMONTREE_5_BAKE}
+          position={[108.32, 5.35, 225.38]}
+          rotation={[Math.PI / 2, 0, 1.49]}
+          scale={3.75}
+        />
+        <mesh
+          geometry={nodes.CommonTree_5_Cube017.geometry}
+          material={materials.COMMONTREE_5_BAKE}
+          position={[-157.23, 5.35, 197.84]}
+          rotation={[Math.PI / 2, 0, 1.73]}
+          scale={3.68}
+        />
+        <mesh
+          geometry={nodes.CommonTree_5_Cube018.geometry}
+          material={materials.COMMONTREE_5_BAKE}
+          position={[-145.29, 5.35, -205.29]}
+          rotation={[1.57, 0, 1.62]}
+          scale={2.76}
+        />
+        <mesh
+          geometry={nodes.CommonTree_5_Cube019.geometry}
+          material={materials.COMMONTREE_5_BAKE}
+          position={[-51.78, 5.35, -205.95]}
+          rotation={[1.57, 0, 1.62]}
+          scale={2.76}
+        />
+        <mesh
+          geometry={nodes.CommonTree_5_Cube020.geometry}
+          material={materials.COMMONTREE_5_BAKE}
+          position={[82.13, 5.35, -234.69]}
+          rotation={[Math.PI / 2, 0, 0.55]}
+          scale={2.76}
+        />
+        <mesh
+          geometry={nodes.CommonTree_5_Cube021.geometry}
+          material={materials.COMMONTREE_5_BAKE}
+          position={[123.49, 5.35, -234.38]}
+          rotation={[Math.PI / 2, 0, 0.55]}
+          scale={2.76}
+        />
+        <mesh
+          geometry={nodes.CommonTree_5_Cube022.geometry}
+          material={materials.COMMONTREE_5_BAKE}
+          position={[60.83, 5.35, -234.54]}
+          rotation={[Math.PI / 2, 0, 0.55]}
+          scale={2.76}
+        />
+        <mesh
+          geometry={nodes.CommonTree_5_Cube023.geometry}
+          material={materials.COMMONTREE_5_BAKE}
+          position={[-195.23, 5.35, -189.53]}
+          rotation={[1.57, 0, 1.62]}
+          scale={2.76}
+        />
+        <mesh
+          geometry={nodes.CommonTree_5_Cube024.geometry}
+          material={materials.COMMONTREE_5_BAKE}
+          position={[-176.83, 5.35, -189.53]}
+          rotation={[1.57, 0, 1.62]}
+          scale={2.76}
+        />
+        <mesh
           geometry={nodes.Willow_1_Cube031.geometry}
           material={materials.WILLOWTREE_1_BAKE}
           position={[101.43, 5.35, 65.38]}
@@ -3028,6 +4029,69 @@ export default function Model({ ...props }) {
           scale={2.63}
         />
         <mesh
+          geometry={nodes.Willow_2_Cube001.geometry}
+          material={materials.WILLOWTREE_2_BAKE}
+          position={[49.13, 5.35, 212.76]}
+          rotation={[1.57, 0, 3.14]}
+          scale={3.25}
+        />
+        <mesh
+          geometry={nodes.Willow_2_Cube002.geometry}
+          material={materials.WILLOWTREE_2_BAKE}
+          position={[-7.92, 5.35, 236.96]}
+          rotation={[Math.PI / 2, 0, -1.62]}
+          scale={3.25}
+        />
+        <mesh
+          geometry={nodes.Willow_2_Cube003.geometry}
+          material={materials.WILLOWTREE_2_BAKE}
+          position={[-118.45, 5.35, -217.06]}
+          rotation={[Math.PI / 2, 0, 1.39]}
+          scale={2.7}
+        />
+        <mesh
+          geometry={nodes.Willow_2_Cube004.geometry}
+          material={materials.WILLOWTREE_2_BAKE}
+          position={[-88.13, 5.35, -219.42]}
+          rotation={[1.57, 0, 1.39]}
+          scale={2.7}
+        />
+        <mesh
+          geometry={nodes.Willow_2_Cube005.geometry}
+          material={materials.WILLOWTREE_2_BAKE}
+          position={[-56.48, 5.35, -236.21]}
+          rotation={[Math.PI / 2, 0, 1.53]}
+          scale={2.7}
+        />
+        <mesh
+          geometry={nodes.Willow_2_Cube006.geometry}
+          material={materials.WILLOWTREE_2_BAKE}
+          position={[5.46, 5.35, 203.2]}
+          rotation={[Math.PI / 2, 0, 1.56]}
+          scale={3.25}
+        />
+        <mesh
+          geometry={nodes.Willow_2_Cube007.geometry}
+          material={materials.WILLOWTREE_2_BAKE}
+          position={[-87.14, 5.35, -236.21]}
+          rotation={[Math.PI / 2, 0, 1.53]}
+          scale={2.7}
+        />
+        <mesh
+          geometry={nodes.Willow_2_Cube008.geometry}
+          material={materials.WILLOWTREE_2_BAKE}
+          position={[-118.02, 5.35, -236.21]}
+          rotation={[Math.PI / 2, 0, 1.53]}
+          scale={2.7}
+        />
+        <mesh
+          geometry={nodes.Willow_2_Cube009.geometry}
+          material={materials.WILLOWTREE_2_BAKE}
+          position={[-147.15, 5.35, -236.65]}
+          rotation={[Math.PI / 2, 0, 1.53]}
+          scale={2.7}
+        />
+        <mesh
           geometry={nodes.Willow_3_Cube037.geometry}
           material={materials.WILLOWTREE_3_BAKE}
           position={[111.12, 5.35, 97.91]}
@@ -3152,6 +4216,41 @@ export default function Model({ ...props }) {
           position={[203.47, 5.35, -15.55]}
           rotation={[Math.PI / 2, 0, 0.14]}
           scale={4.48}
+        />
+        <mesh
+          geometry={nodes.Willow_3_Cube001.geometry}
+          material={materials.WILLOWTREE_3_BAKE}
+          position={[-143.93, 5.35, -222.81]}
+          rotation={[1.57, 0, 3.13]}
+          scale={4.48}
+        />
+        <mesh
+          geometry={nodes.Willow_3_Cube002.geometry}
+          material={materials.WILLOWTREE_3_BAKE}
+          position={[170.68, 5.35, -201.45]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.91}
+        />
+        <mesh
+          geometry={nodes.Willow_3_Cube003.geometry}
+          material={materials.WILLOWTREE_3_BAKE}
+          position={[-61.15, 5.35, -218.65]}
+          rotation={[Math.PI / 2, 0, 1.57]}
+          scale={4.48}
+        />
+        <mesh
+          geometry={nodes.Willow_3_Cube004.geometry}
+          material={materials.WILLOWTREE_3_BAKE}
+          position={[149.93, 5.35, -201.19]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.91}
+        />
+        <mesh
+          geometry={nodes.Willow_3_Cube005.geometry}
+          material={materials.WILLOWTREE_3_BAKE}
+          position={[190.51, 5.35, -201.19]}
+          rotation={[Math.PI / 2, 0, 1.51]}
+          scale={3.91}
         />
         <mesh
           geometry={nodes.Willow_4_Cube103.geometry}
@@ -3403,7 +4502,7 @@ export default function Model({ ...props }) {
           material={materials.WILLOWTREE_4_BAKE}
           position={[-81.45, 5.35, 39.48]}
           rotation={[Math.PI / 2, 0, 1.51]}
-          scale={navigation.location === '' ? 2.22 : 1.8}
+          scale={2.74}
         />
         <mesh
           geometry={nodes.Willow_4_Cube139.geometry}
@@ -3509,6 +4608,41 @@ export default function Model({ ...props }) {
           position={[197.2, 5.35, 136.98]}
           rotation={[Math.PI / 2, 0, 1.85]}
           scale={3.73}
+        />
+        <mesh
+          geometry={nodes.Willow_4_Cube001.geometry}
+          material={materials.WILLOWTREE_4_BAKE}
+          position={[-172.93, 5.35, 196.08]}
+          rotation={[Math.PI / 2, 0, 2.08]}
+          scale={2.74}
+        />
+        <mesh
+          geometry={nodes.Willow_4_Cube002.geometry}
+          material={materials.WILLOWTREE_4_BAKE}
+          position={[83.53, 5.35, 214.36]}
+          rotation={[Math.PI / 2, 0, 2.08]}
+          scale={2.74}
+        />
+        <mesh
+          geometry={nodes.Willow_4_Cube005.geometry}
+          material={materials.WILLOWTREE_4_BAKE}
+          position={[6.14, 5.35, 236.8]}
+          rotation={[Math.PI / 2, 0, 1.52]}
+          scale={3.73}
+        />
+        <mesh
+          geometry={nodes.Willow_4_Cube003.geometry}
+          material={materials.WILLOWTREE_4_BAKE}
+          position={[-9.83, 5.35, 202.89]}
+          rotation={[1.57, 0, -1.58]}
+          scale={3.73}
+        />
+        <mesh
+          geometry={nodes.Willow_4_Cube006.geometry}
+          material={materials.WILLOWTREE_4_BAKE}
+          position={[204.2, 5.35, 206.47]}
+          rotation={[Math.PI / 2, 0, 2.08]}
+          scale={2.74}
         />
         <mesh
           geometry={nodes.Willow_5_Cube010.geometry}

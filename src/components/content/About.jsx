@@ -78,7 +78,7 @@ export default function About() {
           <div className={clsx('flex flex-row space-x-8', navigation.theme === 'dark' ? ' text-white' : ' text-black')}>
             <div className='flex flex-col'>
               <h6 className={clsx('font-medium ', navigation.theme === 'dark' ? ' text-white' : ' text-black')}>
-                3D Aset
+                Aset 3D
               </h6>
               <div className=' flex flex-row'>
                 <p className='mr-2'>Quaternius</p>

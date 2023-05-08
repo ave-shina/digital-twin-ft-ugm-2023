@@ -41,6 +41,7 @@ function Map(props) {
     // Reset the cursor style when the mouse leaves the circle
     const container = e.target.getStage().container()
     container.style.cursor = 'default'
+    container.style.bgColor = 'red'
   }
 
   const mapContainer = useRef(null)

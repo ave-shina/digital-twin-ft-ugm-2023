@@ -79,7 +79,7 @@ export default function Page(props) {
       {/* Loading */}
       <Loading></Loading>
       {/* Komponen Audio */}
-      <audio ref={myRef} preload='none'>
+      <audio ref={myRef}>
         <source
           src='https://drive.google.com/uc?authuser=0&id=1nm8IgNlq-mi1jS9W6Pg9UtE1obAaXAGD&export=download'
           type='audio/mpeg'

@@ -152,11 +152,13 @@ function Map(props) {
                         onMouseLeave={(e) => {
                           handleMouseLeave(e, data.name)
                         }}
-                        onClick={(area) => {
+                        onClick={(e) => {
                           handleClick(data.isRoute, data.name)
+                          handleMouseEnter(e, data.name)
                         }}
-                        onTap={(area) => {
+                        onTap={(e) => {
                           handleClick(data.isRoute, data.name)
+                          handleMouseEnter(e, data.name)
                         }}
                       />
                     ))}
@@ -175,11 +177,13 @@ function Map(props) {
                       onMouseLeave={(e) => {
                         handleMouseLeave(e, data.name)
                       }}
-                      onClick={(area) => {
+                      onClick={(e) => {
                         handleClick(data.isRoute, data.name)
+                        handleMouseEnter(e, data.name)
                       }}
-                      onTap={(area) => {
+                      onTap={(e) => {
                         handleClick(data.isRoute, data.name)
+                        handleMouseEnter(e, data.name)
                       }}
                     />
                   ))}

@@ -53,7 +53,7 @@ function Map(props) {
   const [image, setImage] = useState(null)
   useEffect(() => {
     const img = new window.Image()
-    img.src = mapImage.url
+    img.src = mapImage.url.replace(/\/upload\//, '/upload/w_1000,f_auto,q_auto/')
     img.crossOrigin = 'anonymous'
     img.onload = () => {
       setImage(img)
@@ -70,6 +70,7 @@ function Map(props) {
       const containerWidth = mapContainer.current.offsetWidth
       const mapWidth = mapRef.current.offsetWidth
       setValue({ scale: 1, translation: { x: (containerWidth - mapWidth) / 2, y: 0 } })
+      console.log(containerWidth - mapWidth)
     }
   }, [open, currentIndex])
 
@@ -133,7 +134,7 @@ function Map(props) {
               setValue(value)
             }}>
             <div ref={mapRef} className={clsx('image-hotspot h-full w-full')}>
-              <Stage width={mapImage.width} height={mapImage.width}>
+              <Stage width={mapImage.formats.large.width} height={mapImage.formats.large.height}>
                 <Layer>
                   {image && <Image image={image} x={0} y={0} scaleX={1} scaleY={1} />}
 

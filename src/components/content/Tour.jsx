@@ -81,7 +81,7 @@ export default function Tour() {
                 openPanorama={openPanorama}
                 mapName={TourData.data.attributes.panoramaData[0].name}
                 setOpenPanorama={setOpenPanorama}
-                mapImage={TourData.data.attributes.panoramaData[0].mapImage.data.attributes.formats.large}
+                mapImage={TourData.data.attributes.panoramaData[0].mapImage.data.attributes}
                 setCurrentScene={setCurrentScene}
               />
             </div>

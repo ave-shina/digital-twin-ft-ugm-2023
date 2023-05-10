@@ -108,7 +108,7 @@ export default function ModalPanorama(props) {
                   pitch={10}
                   yaw={180}
                   image={
-                    sceneObject && sceneObject?.scenePanoImg.url.replace(/\/upload\//, '/upload/w_4000,f_auto,q_auto/')
+                    sceneObject && sceneObject?.scenePanoImg.url?.replace(/\/upload\//, '/upload/w_4000,f_auto,q_auto/')
                   }
                   autoLoad
                   showZoomCtrl={false}

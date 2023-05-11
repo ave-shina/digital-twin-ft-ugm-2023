@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
 const titleDefault = 'Virtual Tour FT UGM'
-const url = 'https://www.virtual-tour-ft-ugm.com//'
+const url = 'https://www.virtual-tour-ft-ugm.com'
 const description =
   'Selamat datang di Virtual Tour Fakultas Teknik Universitas Gadjah Mada (FT UGM)!, Dalam perjalanan virtual ini, Anda akan diajak mengenal lebih dekat berbagai gedung akademik dan lingkungan kampus yang mendukung proses pembelajaran dan penelitian di FT UGM.'
 const author = 'Author'

@@ -1,6 +1,7 @@
 import { useRef, forwardRef, useImperativeHandle, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { setTheme, setMusic, setFirstTutorial } from 'redux/navigation'
+import { NextSeo } from 'next-seo'
 
 const Layout = forwardRef(({ children, ...props }, ref) => {
   const localRef = useRef()
@@ -38,6 +39,18 @@ const Layout = forwardRef(({ children, ...props }, ref) => {
 
   return (
     <div {...props} ref={localRef} className=' min-h-full w-full !p-0'>
+      <NextSeo
+        title='Virtual Tour FT UGM'
+        description='Selamat datang di Virtual Tour Fakultas Teknik Universitas Gadjah Mada (FT UGM)!, Dalam perjalanan virtual ini, Anda akan diajak mengenal lebih dekat berbagai gedung akademik dan lingkungan kampus yang mendukung proses pembelajaran dan penelitian di FT UGM.'
+        openGraph={{
+          images: {
+            url: 'https://virtual-tour-ft-ugm.vercel.app/icons/android-icon-512x512.png',
+            width: 512,
+            height: 512,
+            alt: 'Virtual Tour FT UGM Logo',
+          },
+        }}
+      />
       {children}
     </div>
   )

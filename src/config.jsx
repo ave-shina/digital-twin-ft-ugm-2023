@@ -1,8 +1,9 @@
 import Head from 'next/head'
 
 const titleDefault = 'Virtual Tour FT UGM'
-const url = 'https://react-three-next.vercel.app/'
-const description = 'The easiest and fastest way to create a 3D website using React Three Fiber and NextJS'
+const url = 'https://www.virtual-tour-ft-ugm.com//'
+const description =
+  'Selamat datang di Virtual Tour Fakultas Teknik Universitas Gadjah Mada (FT UGM)!, Dalam perjalanan virtual ini, Anda akan diajak mengenal lebih dekat berbagai gedung akademik dan lingkungan kampus yang mendukung proses pembelajaran dan penelitian di FT UGM.'
 const author = 'Author'
 
 export default function Header({ title = titleDefault }) {
@@ -21,7 +22,7 @@ export default function Header({ title = titleDefault }) {
       <meta name='description' content={description} />
       <meta
         name='keywords'
-        content='Software Engineer,Product Manager,Project Manager,Data Scientist,Computer Scientist'
+        content='Virtual Tour, Fakultask Teknik, Universitas Gadjah Mada, Indonesia, UGM, FT, DTETI, DTSL, DTMI, DTK, DTNTF, DTGL, DTGD, DTAP'
       />
       <meta name='robots' content='index,follow' />
       <meta name='distribution' content='web' />
@@ -35,10 +36,10 @@ export default function Header({ title = titleDefault }) {
       <meta property='og:site_name' content={title} />
       <meta property='og:description' content={description} />
 
-      <link rel='apple-touch-icon' href='/icons/apple-touch-icon.png' />
+      <link rel='apple-touch-icon' href='/icons/favicon-16x16.png' />
       <link rel='apple-touch-icon' sizes='16x16' href='/icons/favicon-16x16.png' />
       <link rel='apple-touch-icon' sizes='32x32' href='/icons/favicon-32x32.png' />
-      <link rel='apple-touch-icon' sizes='180x180' href='/icons/apple-touch-icon.png' />
+      <link rel='apple-touch-icon' sizes='180x180' href='/icons/favicon-32x32.png' />
       <link rel='manifest' href='/manifest.json' />
       <link rel='mask-icon' color='#000000' href='/icons/safari-pinned-tab.svg' />
       <link rel='apple-touch-startup-image' href='/startup.png' />

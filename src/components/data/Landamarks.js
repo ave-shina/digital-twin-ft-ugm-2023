@@ -18903,7 +18903,7 @@ export const Landmarks = {
         name: 'Tugu Teknik',
         isDescription: true,
         description:
-          '<p>Tugu Teknik yang berada di area masuk Fakultas Teknik dibangun pada perayaan 50 tahun Pendidikan Tinggi Teknik, 17 Februari 1996. Desain Tugu Teknik merupakan karya Mahasiswa Jurusan Arsitektur UGM bernama Gatot Suprihadi yang mengalahkan 21 peserta lain dari kalangan arsitek, seniman dan profesional.</p><p>&nbsp;</p><p>Tugu teknik ini memiliki filosofi tersendiri, 5 trap mencerminkan pendidikan tinggi teknik beserta sivitas akademik &amp; alumni FT UGM dalam kehidupannya selalu berpedoman pada Pancasila. Bagian penopang yang menyerupai Candi Bentar melambangkan sistem pendidikan tinggi teknik beserta sivitas akademik &amp; alumni senantiasa mesti berpijak pada akar kebudayaan asli Indonesia.</p><p>&nbsp;</p><p>Adapun jumlah 3 buah penopang tersebut mencerminkan 3 kelompok/rumpun keilmuwan teknik FT UGM yaitu Kelompok Sipil &amp; Perencanaan (meliputi Arsitektur, Teknik Geodesi dan Teknik Sipil), Kelompok Industri (meliputi Teknik Kimia, Teknik Mesin dan Teknik Elektro) dan Kelompok Energi (meliputi Teknik Nuklir dan Teknik Geologi). Pada bagian atas yang terdiri dari 8 kubus stainless steel melambangkan 8 Departemen di Fakultas Teknik UGM dengan sistem molekuler yang bermakna kesolidan tiap sivitas akademika dan alumni Fakultas Teknik UGM dalam implementasi misi pengembangan ilmu pengetahuan</p><p>&nbsp;</p><p>Sumber :&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>',
+          '<p>Tugu Teknik yang berada di area masuk Fakultas Teknik dibangun pada perayaan 50 tahun Pendidikan Tinggi Teknik, 17 Februari 1996. Desain Tugu Teknik merupakan karya Mahasiswa Jurusan Arsitektur UGM bernama Gatot Suprihadi yang mengalahkan 21 peserta lain dari kalangan arsitek, seniman dan profesional.</p><p>&nbsp;</p><p>Tugu teknik ini memiliki filosofi tersendiri, 5 trap mencerminkan pendidikan tinggi teknik beserta sivitas akademik &amp; alumni FT UGM dalam kehidupannya selalu berpedoman pada Pancasila. Bagian penopang yang menyerupai Candi Bentar melambangkan sistem pendidikan tinggi teknik beserta sivitas akademik &amp; alumni senantiasa mesti berpijak pada akar kebudayaan asli Indonesia.</p><p>&nbsp;</p><p>Adapun jumlah 3 buah penopang tersebut mencerminkan 3 kelompok/rumpun keilmuwan teknik FT UGM yaitu Kelompok Sipil &amp; Perencanaan (meliputi Arsitektur, Teknik Geodesi dan Teknik Sipil), Kelompok Industri (meliputi Teknik Kimia, Teknik Mesin dan Teknik Elektro) dan Kelompok Energi (meliputi Teknik Nuklir dan Teknik Geologi). Pada bagian atas yang terdiri dari 8 kubus stainless steel melambangkan 8 Departemen di Fakultas Teknik UGM dengan sistem molekuler yang bermakna kesolidan tiap sivitas akademika dan alumni Fakultas Teknik UGM dalam implementasi misi pengembangan ilmu pengetahuan</p><p>&nbsp;</p><p>Sumber : <a href="https://id.wikipedia.org/wiki/Fakultas_Teknik_Universitas_Gadjah_Mada">Fakultas Teknik Universitas Gadjah Mada - Wikipedia bahasa Indonesia, ensiklopedia bebas</a></p><p>&nbsp;</p><p>&nbsp;</p>',
         isMap: false,
         subName: null,
         isGallery: false,
@@ -18912,7 +18912,7 @@ export const Landmarks = {
         objectName: 'TUGU TEKNIK',
         uid: 'tugu_teknik',
         createdAt: '2023-05-02T17:15:18.940Z',
-        updatedAt: '2023-05-10T02:12:20.926Z',
+        updatedAt: '2023-05-11T03:47:17.580Z',
         publishedAt: '2023-05-02T17:39:46.738Z',
         zoomTarget: null,
         zoomCamera: null,

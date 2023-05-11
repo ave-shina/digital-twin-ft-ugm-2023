@@ -9,8 +9,7 @@ import { setFirstTutorial } from 'redux/navigation'
 import Layout from '@/components/content/Layout'
 import Loading from '@/components/Loading'
 import StoryBoard from '@/components/StoryBoard'
-import Tutorial from '@/components/Tutorial'
-const Scene = dynamic(() => import('../components/canvas/Scene'), { ssr: true })
+const Scene = dynamic(() => import('../components/canvas/Scene'), { ssr: false })
 
 import Logo from '@/components/navigation/Logo'
 import Main from '@/components/navigation/Main'

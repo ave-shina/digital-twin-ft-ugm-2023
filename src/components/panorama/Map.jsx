@@ -75,7 +75,7 @@ function Map(props) {
   }, [open, currentIndex])
 
   // Efek ketika hover titik di peta
-  const [circleName, setcircleName] = useState(mapInformation[0].name)
+  const [circleName, setcircleName] = useState(mapInformation[0]?.name ? mapInformation[0].name : '')
   const handleMouseEnter = (e, name) => {
     const container = e.target.getStage().container()
     container.style.cursor = 'pointer'

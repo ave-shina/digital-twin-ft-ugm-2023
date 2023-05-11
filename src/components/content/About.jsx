@@ -31,7 +31,7 @@ export default function About() {
 
           <p>
             {' '}
-            Selamat menikmati Virtual Tour FT UGM, semoga pengalaman ini memberikan wawasan dan isnpirasi yang
+            Selamat menikmati Virtual Tour FT UGM, semoga pengalaman ini memberikan wawasan dan inspirasi yang
             bermanfat. Selamat menjelajah!
           </p>
         </div>

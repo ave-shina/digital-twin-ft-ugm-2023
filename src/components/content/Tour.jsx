@@ -94,7 +94,10 @@ export default function Tour() {
               Catatan: Anda dapat memulai penjelajahan Fakultas Teknik dengan menekan titik berbentuk lingkaran di
               tampilan atas. Lingkaran merah akan menunjukkan informasi detail tentang bangunan, sementara lingkaran
               biru akan memperlihatkan panorama jalan. Jangan lupa, Anda juga bisa memulai penjelajahan dengan menekan
-              tombol di bawah ini. Mari kita jelajahi bersama!
+              tombol di bawah ini.
+              <br />
+              Selanjutnya, panorama akan ditampilkan dengan adanya ikon berbentuk kamera. Ikon ini akan membantu Anda
+              menavigasi dan berpindah lokasiMari kita jelajahi bersama!
               <br />
             </p>
             <button

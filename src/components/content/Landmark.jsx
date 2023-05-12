@@ -209,7 +209,7 @@ export default function Landmark(props) {
         className={clsx(
           'absolute flex min-h-full w-full scrollbar-thin scrollbar-track-gray-100 scrollbar-thumb-gray-600  ',
         )}>
-        <div className='absolute bottom-0 h-1/2 w-full bg-gradient-to-t from-black to-transparent  opacity-80'></div>
+        <div className='absolute bottom-0 h-1/2 w-full bg-gradient-to-t from-black to-transparent  opacity-60'></div>
         <div
           className={clsx(
             'absolute bottom-4 mb-4 flex w-full items-center px-4 sm:px-6  ',

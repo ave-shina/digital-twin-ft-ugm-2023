@@ -9,6 +9,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { toggleLocation, toggleContent } from 'redux/navigation'
 
 import { useRouter } from 'next/router'
+import { Landmarks } from '../data/Landamarks'
 
 function Map(props) {
   const router = useRouter()
@@ -20,25 +21,26 @@ function Map(props) {
   // Deklarasi Lokasi titik panorama
   const map = []
 
+  // const [landmarksData, setLandmarksData] = useState(null)
+  // useEffect(() => {
+  //   async function fetchLandmarksData() {
+  //     const response = await fetch('http://localhost:1337/api/landmarks?populate=deep')
+  //     const data = await response.json()
+  //     setLandmarksData(data)
+  //   }
+  //   fetchLandmarksData()
+  // }, [])
   // Deklarasi lokasi titik panorama ketika di halaman tour
-  const mapTour = [
-    { name: 'DTETI', position: [300, 480, 10], isRoute: false },
-    { name: 'DTAP', position: [340, 160, 10], isRoute: false },
-    { name: 'DTSL', position: [560, 200, 10], isRoute: false },
-    { name: 'DTMI', position: [240, 470, 10], isRoute: false },
-    { name: 'DTK', position: [270, 350, 10], isRoute: false },
-    { name: 'DTGD', position: [470, 150, 10], isRoute: false },
-    { name: 'DTGL', position: [560, 470, 10], isRoute: false },
-    { name: 'DTNTF', position: [510, 520, 10], isRoute: false },
-    { name: 'TUGU TEKNIK', position: [645, 460, 10], isRoute: false },
-    { name: 'SGLC', position: [410, 370, 10], isRoute: false },
-    { name: 'PERPUSTAKAAN', position: [440, 460, 10], isRoute: false },
-    { name: 'MASJID FT', position: [400, 270, 10], isRoute: false },
-    { name: 'ERIC', position: [730, 420, 10], isRoute: false },
-  ]
+  const mapTour = []
+  for (let i = 0; i < Landmarks.data.length; i++) {
+    mapTour.push({
+      name: Landmarks.data[i].attributes.objectName,
+      position: Landmarks.data[i].attributes.mapCoordinate,
+      isRoute: false,
+    })
+  }
 
   const navigation = useSelector((state) => state.navigation)
-
   for (let i = 0; i < mapInformation.length; i++) {
     map.push({
       x: mapInformation[i].mapCoordinate[0],
@@ -70,7 +72,6 @@ function Map(props) {
       const containerWidth = mapContainer.current.offsetWidth
       const mapWidth = mapRef.current.offsetWidth
       setValue({ scale: 1, translation: { x: (containerWidth - mapWidth) / 2, y: 0 } })
-      console.log(containerWidth - mapWidth)
     }
   }, [open, currentIndex])
 

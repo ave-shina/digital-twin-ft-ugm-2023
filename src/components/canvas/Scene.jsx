@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import * as THREE from 'three'
 import { Canvas } from '@react-three/fiber'
@@ -36,9 +36,21 @@ export default function Scene({ children, ...props }) {
     zoomTarget: [0, 0, 0],
     zoomCamera: [200, 0, 10],
   }
-  const locationData = Landmarks.data.find((item) => item.attributes.objectName === navigation.location)?.attributes
 
+  const locationData = Landmarks.data.find((item) => item.attributes.objectName === navigation.location)?.attributes
   const router = useRouter()
+
+  // const [landmarksData, setLandmarksData] = useState(null)
+  // useEffect(() => {
+  //   async function fetchLandmarksData() {
+  //     const response = await fetch('http://localhost:1337/api/landmarks?populate=deep')
+  //     const data = await response.json()
+  //     setLandmarksData(data)
+  //   }
+  //   fetchLandmarksData()
+  // }, [])
+
+  // console.log('uhuy', landmarksData)
 
   // Logika ketika Object landmark di klik
   const toggleZoom = (e) => {

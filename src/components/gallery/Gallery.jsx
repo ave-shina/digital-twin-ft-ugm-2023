@@ -53,7 +53,7 @@ export default function Gallery(props) {
   )
 
   return (
-    <div className='relative flex w-screen flex-col items-center justify-center'>
+    <div className='relative flex w-full flex-col items-center justify-center'>
       {/* List Gallery */}
       {galleryList}
       {/* Light Box */}

@@ -25,8 +25,6 @@ export default function Model({ ...props }) {
     })
   }
 
-  console.log(locationData)
-
   const [object, setObject] = useState([])
 
   // Hover untuk menampilkan Tooltip

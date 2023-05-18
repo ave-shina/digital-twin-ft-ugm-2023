@@ -89,7 +89,7 @@ export default function About() {
                 Musik
               </h6>
               <div className=' flex flex-row'>
-                <p className='mr-2'>Kiki&apos;s Delivery Service - Umi no Mieru Machi</p>
+                <p className='mr-2'>A Town With An Ocean View - Kiki&apos;s Delivery Service (Piano)</p>
               </div>
             </div>
           </div>

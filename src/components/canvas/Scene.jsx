@@ -99,7 +99,7 @@ export default function Scene({ children, ...props }) {
             freeControl={freeControl}
           />
           {/* mODEL */}
-          <Model showTooltip={showTooltip} locationData={locationData} toggleZoom={toggleZoom}></Model>
+          <Model showTooltip={showTooltip} landmarksData={Landmarks} toggleZoom={toggleZoom}></Model>
           {/* Background */}
           <Background theme={navigation.theme} />
           {children}

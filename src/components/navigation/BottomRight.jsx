@@ -43,7 +43,7 @@ export default function BottomRight(props) {
             </Fade>{' '}
           </>
         )}
-        <a target='_blank' href='https://www.google.com/' rel='noopener noreferrer'>
+        <a target='_blank' href='https://forms.gle/TJupvixtU7FbHB8T9' rel='noopener noreferrer'>
           <button className={clsx(' group flex h-14 cursor-pointer  items-center justify-center rounded-full  ')}>
             <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
               <circle cx='12' cy='12' r='12' className={clsx(' fill-white group-hover:fill-black')} />

@@ -15,7 +15,10 @@ import { Landmarks } from '../data/Landamarks'
 import Gallery from '../gallery/Gallery'
 import Navbar from './Navbar'
 
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { setMapLandmarkMessage } from 'redux/navigation'
+
+import Image from 'next/image'
 
 export default function Landmark(props) {
   const navigation = useSelector((state) => state.navigation)
@@ -92,6 +95,49 @@ export default function Landmark(props) {
     }
   }, [title])
 
+  const dispatch = useDispatch()
+  const Message = () => (
+    <p className='mb-4 text-base leading-6 text-white'>
+      <div className=' flex w-full flex-row justify-between'>
+        {' '}
+        <span> Catatan:</span>
+        <button
+          onClick={() => {
+            dispatch(setMapLandmarkMessage(false))
+          }}
+          className={clsx(
+            'group  flex h-6 w-6 cursor-pointer items-center justify-center rounded-full border border-solid border-black bg-white sm:right-6 sm:top-6 sm:h-6 sm:w-6 ',
+            ' stroke-black',
+          )}>
+          <svg width='12' height='12' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'>
+            <path
+              d='M21 21L1 1M21 1L1 21'
+              className={clsx('  group-hover:stroke-2', ' stroke-black')}
+              stroke-linecap='round'
+              stroke-linejoin='round'
+            />
+          </svg>
+        </button>
+      </div>
+      <p>
+        Anda dapat memulai penjelajahan dengan menekan titik berbentuk lingkaran pada denah tersebut. lingkaran biru
+        nantinya akan memperlihatkan panorama jalan{' '}
+        <span className='mx-1 inline-block h-2 w-2 rounded-full bg-blue-600'></span>. Selanjutnya, pada tampilan
+        panorama akan ditampilkan dengan adanya ikon berbentuk kamera{' '}
+        <span className=' relative -bottom-1 inline-block h-4 w-4'>
+          <Image
+            src='https://img.icons8.com/material/4ac144/256/camera.png'
+            alt='logo-teknik-outline'
+            width={100}
+            height={100}
+            className={clsx('h-full w-full')}
+          />
+        </span>
+        . Ikon ini akan membantu Anda menavigasi dan berpindah lokasi di dalam panorama.
+      </p>
+    </p>
+  )
+
   // Konten utama
   function Content(content) {
     switch (content) {
@@ -105,7 +151,10 @@ export default function Landmark(props) {
               allowTouchMove={false}
               pagination={true}
               navigation={{ prevEl, nextEl }}
-              className={clsx('mySwiper z-20 flex  w-full items-center justify-center rounded-md  bg-white ')}>
+              className={clsx(
+                'mySwiper z-20flex w-full rounded-md border border-solid  bg-gray-300',
+                navigation.theme === 'dark' ? ' border-white' : ' !border-black',
+              )}>
               {mapDetail.map((item, index) => {
                 return (
                   <SwiperSlide key={index}>
@@ -118,18 +167,13 @@ export default function Landmark(props) {
                       mapInformation={item.MapInformation}
                       openPanorama={openPanorama}
                       setOpenPanorama={setOpenPanorama}
-                      setCurrentScene={setCurrentScene}></Map>
+                      setCurrentScene={setCurrentScene}
+                      Message={Message}></Map>
                   </SwiperSlide>
                 )
               })}
             </Swiper>
 
-            <p className='mt-4'>
-              {' '}
-              Catatan: Anda dapat memulai penjelajahan dengan menekan titik berbentuk lingkaran di tampilan atas.
-              lingkaran biru akan memperlihatkan panorama jalan. Selanjutnya, panorama akan ditampilkan dengan adanya
-              ikon berbentuk kamera. Ikon ini akan membantu Anda menavigasi dan berpindah lokasi.
-            </p>
             <div
               className={clsx(
                 'absolute left-[12%] top-1/2 z-20 m-auto flex -translate-x-1/2 -translate-y-1/2 cursor-pointer ',

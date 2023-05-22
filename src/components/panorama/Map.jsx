@@ -6,14 +6,14 @@ import { MapInteractionCSS } from 'react-map-interaction'
 const { Stage, Layer, Image, Circle } = require('react-konva')
 
 import { useSelector, useDispatch } from 'react-redux'
-import { toggleLocation, toggleContent } from 'redux/navigation'
+import { toggleLocation, toggleContent, setMapTourMessage, setMapLandmarkMessage } from 'redux/navigation'
 
 import { useRouter } from 'next/router'
 import { Landmarks } from '../data/Landamarks'
 
-function Map(props) {
+function Map(props, children) {
   const router = useRouter()
-  const { setCurrentScene, setOpenPanorama, mapInformation, mapImage, mapName, open, currentIndex } = props
+  const { setCurrentScene, setOpenPanorama, mapInformation, mapImage, mapName, open, currentIndex, Message } = props
   // set Current Scen digunakan untuk merubah Tampilan Panorama
   // Map Information = Semua titik lokasi dalam satu map
   // Map Image = Gambar Peta
@@ -117,7 +117,7 @@ function Map(props) {
         navigation.theme === 'dark' ? ' bg-slate-700' : ' bg-slate-200',
       )}>
       <div className={clsx(' relative flex  w-full flex-col items-center justify-center')}>
-        <div ref={mapContainer} className={clsx('flex h-[600px] w-full items-center justify-center overflow-hidden')}>
+        <div ref={mapContainer} className={clsx('flex h-[500px] w-full items-center justify-center overflow-hidden')}>
           <div className='absolute left-4 top-4 z-10 overflow-hidden rounded-md bg-black px-2 py-1 text-base text-white'>
             {' '}
             {circleName}
@@ -128,6 +128,54 @@ function Map(props) {
             )}>
             {mapName}
           </div>
+
+          {navigation.content == 'tour' && (
+            <div
+              onClick={() => {
+                !navigation.mapTourMessage && dispatch(setMapTourMessage(true))
+              }}
+              className={clsx(
+                !navigation.mapTourMessage ? ' left-4 cursor-pointer' : 'inset-x-4',
+                'absolute  bottom-8  z-10 overflow-hidden rounded-md bg-black px-2 py-1 text-base text-white',
+              )}>
+              {!navigation.mapTourMessage ? (
+                <button className='my-1 flex cursor-pointer items-center justify-center'>
+                  <svg width='18' height='18' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                    <path
+                      d='M15.684 11.1L14.604 12.204C13.74 13.068 13.2 13.8 13.2 15.6H10.8V15C10.8 13.668 11.34 12.468 12.204 11.604L13.692 10.092C14.136 9.66 14.4 9.06 14.4 8.4C14.4 7.76348 14.1471 7.15303 13.6971 6.70294C13.247 6.25286 12.6365 6 12 6C11.3635 6 10.753 6.25286 10.3029 6.70294C9.85286 7.15303 9.6 7.76348 9.6 8.4H7.2C7.2 7.12696 7.70571 5.90606 8.60589 5.00589C9.50606 4.10571 10.727 3.6 12 3.6C13.273 3.6 14.4939 4.10571 15.3941 5.00589C16.2943 5.90606 16.8 7.12696 16.8 8.4C16.7983 9.41189 16.3972 10.3822 15.684 11.1ZM13.2 20.4H10.8V18H13.2M12 0C10.4241 0 8.86371 0.310389 7.4078 0.913446C5.95189 1.5165 4.62902 2.40042 3.51472 3.51472C1.26428 5.76516 0 8.8174 0 12C0 15.1826 1.26428 18.2348 3.51472 20.4853C4.62902 21.5996 5.95189 22.4835 7.4078 23.0866C8.86371 23.6896 10.4241 24 12 24C15.1826 24 18.2348 22.7357 20.4853 20.4853C22.7357 18.2348 24 15.1826 24 12C24 5.364 18.6 0 12 0Z'
+                      className={clsx(' fill-white group-hover:fill-black')}
+                    />
+                  </svg>
+                </button>
+              ) : (
+                <Message></Message>
+              )}
+            </div>
+          )}
+
+          {navigation.content == 'landmark' && (
+            <div
+              onClick={() => {
+                !navigation.mapLandmarkMessage && dispatch(setMapLandmarkMessage(true))
+              }}
+              className={clsx(
+                !navigation.mapLandmarkMessage ? ' left-4 !cursor-pointer' : 'inset-x-4',
+                'absolute bottom-8 z-[15] overflow-hidden rounded-md bg-black px-2 py-1 text-base text-white',
+              )}>
+              {!navigation.mapLandmarkMessage ? (
+                <button className='my-1 flex cursor-pointer items-center justify-center'>
+                  <svg width='18' height='18' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                    <path
+                      d='M15.684 11.1L14.604 12.204C13.74 13.068 13.2 13.8 13.2 15.6H10.8V15C10.8 13.668 11.34 12.468 12.204 11.604L13.692 10.092C14.136 9.66 14.4 9.06 14.4 8.4C14.4 7.76348 14.1471 7.15303 13.6971 6.70294C13.247 6.25286 12.6365 6 12 6C11.3635 6 10.753 6.25286 10.3029 6.70294C9.85286 7.15303 9.6 7.76348 9.6 8.4H7.2C7.2 7.12696 7.70571 5.90606 8.60589 5.00589C9.50606 4.10571 10.727 3.6 12 3.6C13.273 3.6 14.4939 4.10571 15.3941 5.00589C16.2943 5.90606 16.8 7.12696 16.8 8.4C16.7983 9.41189 16.3972 10.3822 15.684 11.1ZM13.2 20.4H10.8V18H13.2M12 0C10.4241 0 8.86371 0.310389 7.4078 0.913446C5.95189 1.5165 4.62902 2.40042 3.51472 3.51472C1.26428 5.76516 0 8.8174 0 12C0 15.1826 1.26428 18.2348 3.51472 20.4853C4.62902 21.5996 5.95189 22.4835 7.4078 23.0866C8.86371 23.6896 10.4241 24 12 24C15.1826 24 18.2348 22.7357 20.4853 20.4853C22.7357 18.2348 24 15.1826 24 12C24 5.364 18.6 0 12 0Z'
+                      className={clsx(' fill-white group-hover:fill-black')}
+                    />
+                  </svg>
+                </button>
+              ) : (
+                <Message></Message>
+              )}
+            </div>
+          )}
 
           <MapInteractionCSS
             value={value}
@@ -170,7 +218,7 @@ function Map(props) {
                       key={index}
                       x={data.x}
                       y={data.y}
-                      radius={5}
+                      radius={6}
                       fill={'blue'}
                       cursor='pointer'
                       onMouseEnter={(e) => {

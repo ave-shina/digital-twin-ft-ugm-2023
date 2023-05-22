@@ -14,7 +14,7 @@ const nextConfig = {
   // },
   experimental: {},
   images: {
-    domains: ['res.cloudinary.com'],
+    domains: ['res.cloudinary.com', 'img.icons8.com'],
   },
   reactStrictMode: true, // Recommended for the `pages` directory, default in `app`.
   webpack(config, { isServer }) {

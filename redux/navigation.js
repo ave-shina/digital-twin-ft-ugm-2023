@@ -7,6 +7,8 @@ const initialState = {
   showTooltip: false,
   music: true,
   firstTutorial: false,
+  mapTourMessage: true,
+  mapLandmarkMessage: true,
 }
 
 export const navigationSlice = createSlice({
@@ -45,6 +47,12 @@ export const navigationSlice = createSlice({
       state.firstTutorial = payload
       localStorage.setItem('firstTutorial', true)
     },
+    setMapTourMessage: (state, { payload }) => {
+      state.mapTourMessage = payload
+    },
+    setMapLandmarkMessage: (state, { payload }) => {
+      state.mapLandmarkMessage = payload
+    },
   },
 })
 
@@ -57,6 +65,8 @@ export const {
   toggleLocation,
   toggleContent,
   setShowTooltip,
+  setMapLandmarkMessage,
+  setMapTourMessage,
 } = navigationSlice.actions
 
 export default navigationSlice.reducer

@@ -7,7 +7,10 @@ import clsx from 'clsx'
 // Data utama untuk fitur Tour
 import { TourData } from '../data/Tour'
 
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { setMapTourMessage } from 'redux/navigation'
+
+import Image from 'next/image'
 
 export default function Tour() {
   // Digunakan untuk menentukan lokasi panorama yang dibuka
@@ -61,6 +64,51 @@ export default function Tour() {
     }
   }, [title])
 
+  const dispatch = useDispatch()
+  const Message = () => (
+    <p className={clsx('white mb-4 text-base leading-6 text-white')}>
+      <div className=' flex w-full flex-row justify-between'>
+        {' '}
+        <span> Catatan:</span>
+        <button
+          onClick={() => {
+            dispatch(setMapTourMessage(false))
+          }}
+          className={clsx(
+            'group  flex h-6 w-6 cursor-pointer items-center justify-center rounded-full border border-solid border-black bg-white sm:right-6 sm:top-6 sm:h-6 sm:w-6 ',
+            ' stroke-black',
+          )}>
+          <svg width='12' height='12' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'>
+            <path
+              d='M21 21L1 1M21 1L1 21'
+              className={clsx('  group-hover:stroke-2', ' stroke-black')}
+              stroke-linecap='round'
+              stroke-linejoin='round'
+            />
+          </svg>
+        </button>
+      </div>
+
+      <p>
+        Anda dapat memulai penjelajahan Fakultas Teknik dengan menekan titik berbentuk lingkaran pada denah tersebut.
+        Lingkaran merah <span className='mx-1 inline-block h-2 w-2 rounded-full bg-red-500'></span> akan menunjukkan
+        informasi detail tentang bangunan, sementara lingkaran biru{' '}
+        <span className='mx-1 inline-block h-2 w-2 rounded-full bg-blue-600'></span> akan memperlihatkan panorama jalan.
+        Jangan lupa, Anda juga bisa memulai penjelajahan dengan menekan tombol di bawah ini. Selanjutnya, pada tampilan
+        panorama akan ditampilkan dengan adanya ikon berbentuk kamera{' '}
+        <span className=' relative -bottom-1 inline-block h-4 w-4'>
+          <Image
+            src='https://img.icons8.com/material/4ac144/256/camera.png'
+            alt='logo-teknik-outline'
+            width={100}
+            height={100}
+            className={clsx('h-full w-full')}
+          />
+        </span>
+        . Ikon ini akan membantu Anda menavigasi dan berpindah lokasi di dalam panorama.Mari kita jelajahi bersama!
+      </p>
+    </p>
+  )
   // Konten utama
   function Content(content) {
     switch (content) {
@@ -71,8 +119,8 @@ export default function Tour() {
           <div className='flex w-full flex-col'>
             <div
               className={clsx(
-                'solid mb-4 flex w-full rounded-md border border-solid  bg-gray-300',
-                navigation.theme === 'dark' ? ' border-white' : ' border-black',
+                'mb-4 flex w-full rounded-md border border-solid  bg-gray-300',
+                navigation.theme === 'dark' ? ' border-white' : ' !border-black',
               )}>
               <Map
                 open={open}
@@ -83,23 +131,10 @@ export default function Tour() {
                 setOpenPanorama={setOpenPanorama}
                 mapImage={TourData.data.attributes.panoramaData[0].mapImage.data.attributes}
                 setCurrentScene={setCurrentScene}
+                Message={Message}
               />
             </div>
 
-            <p
-              className={clsx(
-                ' mb-4 text-base leading-8 text-black',
-                navigation.theme === 'dark' ? ' text-white' : ' text-black',
-              )}>
-              Catatan: Anda dapat memulai penjelajahan Fakultas Teknik dengan menekan titik berbentuk lingkaran di
-              tampilan atas. Lingkaran merah akan menunjukkan informasi detail tentang bangunan, sementara lingkaran
-              biru akan memperlihatkan panorama jalan. Jangan lupa, Anda juga bisa memulai penjelajahan dengan menekan
-              tombol di bawah ini.
-              <br />
-              Selanjutnya, panorama akan ditampilkan dengan adanya ikon berbentuk kamera. Ikon ini akan membantu Anda
-              menavigasi dan berpindah lokasiMari kita jelajahi bersama!
-              <br />
-            </p>
             <button
               onClick={() => {
                 setOpenPanorama(true)

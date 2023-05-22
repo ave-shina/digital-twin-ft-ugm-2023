@@ -5,23 +5,21 @@ import { useFrame } from '@react-three/fiber'
 
 import { useSelector } from 'react-redux'
 
-import { Landmarks } from '../data/Landamarks'
-
 export default function Model({ ...props }) {
   const navigation = useSelector((state) => state.navigation)
   // Mendapatkan fungsi toggle zoom dari parent
-  const { toggleZoom } = props
+  const { toggleZoom, landmarksData } = props
   const group = useRef()
   // import 3dModel
   const { nodes, materials } = useGLTF('object/map-min.glb')
 
   //Deklarasi untuk Lokasi Tooltip
-  const locationData = []
+  const tooltipLocationData = []
 
-  for (let i = 0; i < Landmarks.data.length; i++) {
-    locationData.push({
-      name: Landmarks.data[i].attributes.objectName,
-      position: Landmarks.data[i].attributes.tooltipLocation,
+  for (let i = 0; i < landmarksData?.data.length; i++) {
+    tooltipLocationData.push({
+      name: landmarksData.data[i].attributes.objectName,
+      position: landmarksData.data[i].attributes.tooltipLocation,
     })
   }
 
@@ -45,14 +43,14 @@ export default function Model({ ...props }) {
   // Filter untuk tooltip berdasarkan array yang masuk
   const [filteredLocation, setFilteredLocation] = useState([])
   useEffect(() => {
-    setFilteredLocation(locationData.filter((obj) => object.includes(obj.name)))
+    setFilteredLocation(tooltipLocationData.filter((obj) => object.includes(obj.name)))
   }, [object])
 
   // Menampilkan semua tooltip
   useEffect(() => {
     // console.log(navigation.showTooltip)
     {
-      navigation.showTooltip == true ? setObject(locationData.map((obj) => obj.name)) : setObject([])
+      navigation.showTooltip == true ? setObject(tooltipLocationData.map((obj) => obj.name)) : setObject([])
     }
   }, [navigation.showTooltip])
 

@@ -265,9 +265,7 @@ export default function Landmark(props) {
             'flex-col sm:mb-6 sm:flex-row',
           )}>
           <div className='mb-4 flex !h-full w-full flex-col flex-wrap  md:mb-0 md:flex-row'>
-            <h1
-              ref={scrollRef}
-              className={clsx('h-full w-full font-medium leading-none text-white', 'text-5xl sm:text-9xl')}>
+            <h1 ref={scrollRef} className={clsx('h-full font-medium leading-none text-white', 'text-5xl sm:text-9xl')}>
               {data.attributes.objectName}
             </h1>
             {data.attributes.subName != null && (

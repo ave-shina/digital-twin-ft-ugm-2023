@@ -117,7 +117,7 @@ function Map(props, children) {
         navigation.theme === 'dark' ? ' bg-slate-700' : ' bg-slate-200',
       )}>
       <div className={clsx(' relative flex  w-full flex-col items-center justify-center')}>
-        <div ref={mapContainer} className={clsx('flex h-[500px] w-full items-center justify-center overflow-hidden')}>
+        <div ref={mapContainer} className={clsx('flex h-[550px] w-full items-center justify-center overflow-hidden')}>
           <div className='absolute left-4 top-4 z-10 overflow-hidden rounded-md bg-black px-2 py-1 text-base text-white'>
             {' '}
             {circleName}

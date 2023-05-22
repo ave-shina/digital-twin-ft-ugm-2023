@@ -136,3 +136,18 @@ figure,
 .react-joyride__beacon {
   display: none !important;
 }
+
+@keyframes navbar-opacity {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.navbar-opacity {
+  -moz-animation: navbar-opacity 0.5s;
+  -webkit-animation: navbar-opacity 0.5s;
+  animation: navbar-opacity 0.5s;
+}

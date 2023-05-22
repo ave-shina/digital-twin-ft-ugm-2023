@@ -12,24 +12,23 @@ export default function Navbar(props) {
   const navigation = useSelector((state) => state.navigation)
   const dispatch = useDispatch()
   const [scrollY, setScrollY] = useState(0)
+  const [prevScrollPos, setPrevScrollPos] = useState(0)
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true)
 
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY)
+      const currentScrollPos = window.scrollY
+      const isScrollingUp = prevScrollPos > currentScrollPos
+      console.log(isScrollingUp, prevScrollPos, currentScrollPos)
+      setIsNavbarVisible(isScrollingUp || currentScrollPos === 0)
+      setPrevScrollPos(currentScrollPos)
     }
-
-    // just trigger this so that the initial state
-    // is updated as soon as the component is mounted
-    // related: https://stackoverflow.com/a/63408216
-    handleScroll()
-
     window.addEventListener('scroll', handleScroll)
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [scrollY])
+  }, [prevScrollPos])
 
   const screenHeight = window.screen.height - 400
 
@@ -38,7 +37,14 @@ export default function Navbar(props) {
   return (
     <div
       className={clsx(
-        'fixed z-[99999998] flex w-full  flex-row items-center justify-between  p-6 ',
+        'fixed z-[99999998] flex  w-full flex-row items-center justify-between p-6 ',
+        scrollY < screenHeight && navigation.content === 'landmark'
+          ? isNavbarVisible
+            ? 'navbar-opacity flex'
+            : 'navbar-opacity flex'
+          : isNavbarVisible
+          ? 'navbar-opacity flex'
+          : '!hidden',
         (scrollY < screenHeight && navigation.theme === 'dark' && navigation.content === 'landmark') ||
           (scrollY < screenHeight && navigation.theme === 'light' && navigation.content === 'landmark')
           ? ' bg-transparent'

@@ -51,7 +51,7 @@ export default function Loading() {
         <div className=' flex flex-col items-center justify-center'>
           <h1 className='text-2xl font-bold  text-black sm:text-4xl'>FAKULTAS TEKNIK</h1>
           <h1 className='mb-2   text-sm text-black  sm:text-base'>UNIVERSITAS GADJAH MADA</h1>
-          <p className='h-full text-sm text-black  sm:text-base'>{`${progress.toString().slice(0, 3)}`} %</p>
+          {/* <p className='h-full text-sm text-black  sm:text-base'>{`${progress.toString().slice(0, 3)}`} %</p> */}
         </div>
       </div>
     </div>

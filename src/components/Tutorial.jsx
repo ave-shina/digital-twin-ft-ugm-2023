@@ -206,6 +206,46 @@ export default function Tutorial(props) {
       ),
     },
     {
+      placement: 'center',
+      target: 'body',
+      title: <h2>Navigasi pada Model 3 Dimensi</h2>,
+      content: (
+        <div className='mt-4 flex flex-col items-center justify-center'>
+          <svg width='128' height='128' viewBox='0 0 463 479' fill='none' xmlns='http://www.w3.org/2000/svg'>
+            <path
+              d='M430.417 80.3334H303.083V112.167H430.417V446.417H303.083V478.25H462.25V112.167C462.25 103.724 458.896 95.6271 452.926 89.6571C446.956 83.6872 438.859 80.3334 430.417 80.3334Z'
+              className={clsx(navigation.theme === 'dark' ? 'fill-white' : 'fill-black')}
+            />
+            <path
+              d='M253.423 0.75H34.41C25.4607 0.75 16.878 4.30509 10.5499 10.6332C4.22178 16.9613 0.666687 25.544 0.666687 34.4933V478.25H287.167V34.4933C287.167 25.544 283.612 16.9613 277.284 10.6332C270.955 4.30509 262.373 0.75 253.423 0.75ZM255.333 446.417H207.583V398.667H80.25V446.417H32.5V34.4933C32.5 34.2425 32.5494 33.9941 32.6454 33.7624C32.7414 33.5307 32.8821 33.3201 33.0594 33.1428C33.2368 32.9654 33.4474 32.8247 33.6791 32.7287C33.9108 32.6327 34.1592 32.5833 34.41 32.5833H253.423C253.674 32.5833 253.923 32.6327 254.154 32.7287C254.386 32.8247 254.597 32.9654 254.774 33.1428C254.951 33.3201 255.092 33.5307 255.188 33.7624C255.284 33.9941 255.333 34.2425 255.333 34.4933V446.417Z'
+              className={clsx(navigation.theme === 'dark' ? 'fill-white' : 'fill-black')}
+            />
+            <path d='M64.3334 80.3334H96.1667V112.167H64.3334V80.3334Z' fill='#FFB039' />
+            <path d='M128 80.3334H159.833V112.167H128V80.3334Z' fill='#FFB039' />
+            <path d='M191.667 80.3334H223.5V112.167H191.667V80.3334Z' fill='#FFB039' />
+            <path d='M64.3334 159.917H96.1667V191.75H64.3334V159.917Z' fill='#FFB039' />
+            <path d='M128 159.917H159.833V191.75H128V159.917Z' fill='#FFB039' />
+            <path d='M191.667 159.917H223.5V191.75H191.667V159.917Z' fill='#FFB039' />
+            <path d='M64.3334 239.5H96.1667V271.333H64.3334V239.5Z' fill='#FFB039' />
+            <path d='M128 239.5H159.833V271.333H128V239.5Z' fill='#FFB039' />
+            <path d='M191.667 239.5H223.5V271.333H191.667V239.5Z' fill='#FFB039' />
+            <path d='M64.3334 319.083H96.1667V350.917H64.3334V319.083Z' fill='#FFB039' />
+            <path d='M128 319.083H159.833V350.917H128V319.083Z' fill='#FFB039' />
+            <path d='M191.667 319.083H223.5V350.917H191.667V319.083Z' fill='#FFB039' />
+            <path d='M303.083 159.917H334.917V191.75H303.083V159.917Z' fill='#FFB039' />
+            <path d='M366.75 159.917H398.583V191.75H366.75V159.917Z' fill='#FFB039' />
+            <path d='M303.083 239.5H334.917V271.333H303.083V239.5Z' fill='#FFB039' />
+            <path d='M366.75 239.5H398.583V271.333H366.75V239.5Z' fill='#FFB039' />
+            <path d='M303.083 319.083H334.917V350.917H303.083V319.083Z' fill='#FFB039' />
+            <path d='M366.75 319.083H398.583V350.917H366.75V319.083Z' fill='#FFB039' />
+          </svg>
+          <p className={clsx('mt-6 w-4/5 text-center ', navigation.theme === 'dark' ? 'text-white' : 'text-black')}>
+            Silahkan klik pada bangunan yang ingin Anda lihat untuk mendapatkan informasi detail lebih lengkap.
+          </p>
+        </div>
+      ),
+    },
+    {
       target: '.tutorial',
       title: <h2>Tutorial</h2>,
       content: (

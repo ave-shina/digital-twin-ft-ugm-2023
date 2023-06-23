@@ -12,52 +12,6 @@ export default function BottomRight(props) {
 
   return (
     <div className={clsx('absolute bottom-6 right-6 z-20 flex flex-col ')}>
-      <div className='relative'>
-        {' '}
-        {openForm && (
-          <>
-            {' '}
-            <Fade left duration={1000}>
-              <div
-                className={clsx(
-                  'absolute -right-1 top-1.5 -z-10 flex w-52 items-center justify-center border border-black bg-white px-4 py-2 !pr-8',
-                )}>
-                <button
-                  onClick={() => {
-                    setOpenForm(false)
-                  }}
-                  className={clsx(
-                    'group mr-2 flex h-4 w-4 cursor-pointer items-center justify-center rounded-full border border-solid border-black bg-transparent text-black sm:h-5 sm:w-5 ',
-                  )}>
-                  <svg width='10' height='10' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                    <path
-                      d='M21 21L1 1M21 1L1 21'
-                      className={clsx('  group-hover:stroke stroke-black')}
-                      stroke-linecap='round'
-                      stroke-linejoin='round'
-                    />
-                  </svg>
-                </button>{' '}
-                <p className='mb-[2px]'> Isi survei di sini -&gt;</p>
-              </div>
-            </Fade>{' '}
-          </>
-        )}
-        <a target='_blank' href='https://forms.gle/TJupvixtU7FbHB8T9' rel='noopener noreferrer'>
-          <button className={clsx(' group flex h-14 cursor-pointer  items-center justify-center rounded-full  ')}>
-            <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-              <circle cx='12' cy='12' r='12' className={clsx(' fill-white group-hover:fill-black')} />
-              <path
-                d='M14.5 6H16C16.2652 6 16.5196 6.10536 16.7071 6.29289C16.8946 6.48043 17 6.73478 17 7V17C17 17.2652 16.8946 17.5196 16.7071 17.7071C16.5196 17.8946 16.2652 18 16 18H8C7.73478 18 7.48043 17.8946 7.29289 17.7071C7.10536 17.5196 7 17.2652 7 17V7C7 6.73478 7.10536 6.48043 7.29289 6.29289C7.48043 6.10536 7.73478 6 8 6H9.5M14.5 6C14.5 5.44772 14.0523 5 13.5 5H10.5C9.94772 5 9.5 5.44772 9.5 6M14.5 6V6.5C14.5 7.05228 14.0523 7.5 13.5 7.5H10.5C9.94772 7.5 9.5 7.05228 9.5 6.5V6M9.5 10H14.5M9.5 12.5H14.5M9.5 15H14.5'
-                className={clsx(' stroke-black group-hover:fill-white')}
-                stroke-linecap='round'
-                stroke-linejoin='round'
-              />
-            </svg>
-          </button>
-        </a>
-      </div>
-
       <button
         onClick={() => {
           dispatch(toggleContent('about'))

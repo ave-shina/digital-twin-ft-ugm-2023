@@ -5,6 +5,7 @@ import { useGLTF, Html } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 
 import { useSelector } from 'react-redux'
+import Grass from './Grass'
 
 export default function Model({ ...props }) {
   const navigation = useSelector((state) => state.navigation)
@@ -84,11 +85,8 @@ export default function Model({ ...props }) {
           position={[0.22, -1.35, 1.2]}
           scale={9.27}
         />
-        {/* Sea mesh */}
-        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 2, 0]} scale={[600, 600, 1]}>
-          <planeGeometry args={[1, 1]} />
-          <meshStandardMaterial color='#73ABE1' transparent opacity={1} roughness={0.1} metalness={0.3} />
-        </mesh>
+        {/* Grass mesh */}
+        <Grass />
         <mesh
           geometry={nodes.OUTSIDE_ISLAND_BAKE.geometry}
           material={materials.OUTSIDE_ISLAND_BAKE}

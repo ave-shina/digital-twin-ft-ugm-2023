@@ -21,7 +21,7 @@ export default function BottomRight() {
   }, [dispatch, router])
 
   return (
-    <div className='absolute bottom-10 md:bottom-9 md:right-10 right-6 z-20 flex flex-col'>
+    <div className='absolute bottom-10 md:bottom-9 md:right-10 right-5 z-20 flex flex-col'>
       <button
         onClick={handleAboutClick}
         className='about-us group flex  cursor-pointer items-center justify-center rounded-full'>

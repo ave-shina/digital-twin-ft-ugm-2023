@@ -38,7 +38,7 @@ export default function About() {
 
         <div className={clsx('contributor flex flex-col')}>
           <div className={clsx('mb-4 flex flex-col')}>
-            <h6 className={clsx('font-medium ', navigation.theme === 'dark' ? ' text-white' : ' text-black')}>
+            <h6 className={clsx('font-medium mb-2 ', navigation.theme === 'dark' ? ' text-white' : ' text-black')}>
               Kontributor
             </h6>
             <div

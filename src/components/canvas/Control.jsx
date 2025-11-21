@@ -60,8 +60,8 @@ export default function Controls(props) {
       }
     }
 
-    // untuk control - constrain pan center to circular area (only when not zooming to a location)
-    if (controls.current && canFreeControl) {
+    // untuk control - constrain pan center to circular area (when panning, including middle mouse button)
+    if (controls.current && !hasLocation) {
       const target = controls.current.target
       // Keep Y at 0 (horizontal plane)
       target.y = 0
@@ -94,9 +94,15 @@ export default function Controls(props) {
       maxDistance: 220,
       maxPolarAngle: Math.PI / 2 - 0.1,
       autoRotate: !hasLocation,
-      enablePan: freeControl && !hasLocation,
+      enablePan: true, // Always enable panning for middle mouse button
       enableRotate: freeControl && !hasLocation,
       enableZoom: freeControl && !hasLocation,
+      // Configure mouse buttons: middle mouse button (scroll button) for panning
+      mouseButtons: {
+        LEFT: freeControl && !hasLocation ? THREE.MOUSE.ROTATE : null,
+        MIDDLE: THREE.MOUSE.PAN, // Middle mouse button for panning
+        RIGHT: null, // Disable right mouse button panning
+      },
     }),
     [isStoryBoard, hasLocation, freeControl],
   )

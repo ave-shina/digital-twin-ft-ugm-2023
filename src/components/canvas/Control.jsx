@@ -1,4 +1,4 @@
-import { useRef, useMemo } from 'react'
+import { useRef, useMemo, useEffect } from 'react'
 
 import * as THREE from 'three'
 import { OrbitControls } from '@react-three/drei'
@@ -29,6 +29,23 @@ export default function Controls(props) {
   const isStoryBoard = introduction === 'storyBoard'
   const hasLocation = navigation.location !== ''
   const canFreeControl = introduction === '' && freeControl === true && !hasLocation
+
+  // Configure mouse buttons for panning (middle mouse button, right mouse button, and trackpad)
+  useEffect(() => {
+    if (controls.current) {
+      // Configure mouse buttons: middle mouse button and right mouse button for panning (default behavior)
+      controls.current.mouseButtons = {
+        LEFT: freeControl && !hasLocation ? THREE.MOUSE.ROTATE : null,
+        MIDDLE: THREE.MOUSE.PAN, // Middle mouse button for panning
+        RIGHT: THREE.MOUSE.PAN, // Right mouse button for panning (default behavior)
+      }
+      // Enable trackpad/touch panning (two-finger drag for pan and zoom)
+      controls.current.touches = {
+        ONE: THREE.TOUCH.ROTATE,
+        TWO: THREE.TOUCH.DOLLY_PAN, // Two-finger drag for panning and zooming (default behavior)
+      }
+    }
+  }, [controls, freeControl, hasLocation])
 
   // useFrame digunakan untuk memantau setiap perubahan vektor 3dimensi pada threejs
   useFrame((state) => {
@@ -94,15 +111,9 @@ export default function Controls(props) {
       maxDistance: 220,
       maxPolarAngle: Math.PI / 2 - 0.1,
       autoRotate: !hasLocation,
-      enablePan: true, // Always enable panning for middle mouse button
+      enablePan: true, // Always enable panning for middle mouse button and trackpad
       enableRotate: freeControl && !hasLocation,
       enableZoom: freeControl && !hasLocation,
-      // Configure mouse buttons: middle mouse button (scroll button) for panning
-      mouseButtons: {
-        LEFT: freeControl && !hasLocation ? THREE.MOUSE.ROTATE : null,
-        MIDDLE: THREE.MOUSE.PAN, // Middle mouse button for panning
-        RIGHT: null, // Disable right mouse button panning
-      },
     }),
     [isStoryBoard, hasLocation, freeControl],
   )

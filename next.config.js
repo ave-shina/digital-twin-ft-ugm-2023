@@ -32,6 +32,12 @@ const securityHeaders = [
 
 const nextConfig = {
   experimental: {},
+  // Skip ESLint saat build karena @typescript-eslint/parser bawaan eslint-config-next
+  // belum kompatibel dengan TypeScript 5.x (DeprecationError: originalKeywordKind).
+  // ESLint tetap bisa dijalankan manual via `npm run lint`.
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'res.cloudinary.com' },
